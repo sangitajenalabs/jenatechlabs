@@ -1,12 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JenaTech Labs</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      background: #020617;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #94a3b8;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      margin-top: 40px;
+      color: #94a3b8;
+    }
+  </style>
 </head>
-<body style="font-family: Arial; text-align: center; margin-top: 100px;">
-  <h1>🚀 JenaTech Labs</h1>
+<body>
+
+<header>
+  <h1>JenaTech Labs</h1>
   <p>IoT • AI • Software Engineering</p>
-  <p>Building smart solutions for the future.</p>
-  <p>Contact: info@jenatechlabs.com</p>
+</header>
+
+<section class="hero">
+  <h2>Building Smart Solutions for the Future</h2>
+  <p>We create intelligent IoT systems, AI solutions, and scalable software.</p>
+  <a href="#contact" class="btn">Contact Us</a>
+</section>
+
+<section class="section">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>IoT Solutions</h3>
+      <p>Smart device integration, tracking systems, and automation.</p>
+    </div>
+    <div class="card">
+      <h3>AI & Machine Learning</h3>
+      <p>Data-driven intelligence and predictive analytics.</p>
+    </div>
+    <div class="card">
+      <h3>Software Development</h3>
+      <p>Web apps, dashboards, APIs, and scalable systems.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>About Us</h2>
+  <p>
+    JenaTech Labs is a technology startup focused on building innovative solutions
+    in IoT, Artificial Intelligence, and Software Development.
+  </p>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact</h2>
+  <p>Email: info@jenatechlabs.com</p>
+</section>
+
+<footer>
+  <p>© 2026 JenaTech Labs. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
