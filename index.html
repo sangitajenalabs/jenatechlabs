@@ -11,9 +11,17 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1e3a8a, #9333ea);
   color: white;
   overflow-x: hidden;
+}
+
+/* Particles background */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e3a8a, #9333ea);
+  z-index: -1;
 }
 
 /* Navbar */
@@ -28,8 +36,6 @@ nav {
   padding: 15px 40px;
 }
 
-nav h1 { margin: 0; }
-
 nav a {
   color: white;
   text-decoration: none;
@@ -40,16 +46,10 @@ nav a {
 .hero {
   text-align: center;
   padding: 140px 20px;
-  animation: fadeIn 1.5s ease;
 }
 
 .hero h2 {
   font-size: 50px;
-}
-
-.hero p {
-  font-size: 18px;
-  opacity: 0.9;
 }
 
 .btn {
@@ -59,12 +59,6 @@ nav a {
   color: #1e3a8a;
   border-radius: 8px;
   text-decoration: none;
-  display: inline-block;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #e0e7ff;
 }
 
 /* Section */
@@ -88,13 +82,6 @@ nav a {
   width: 260px;
   border-radius: 15px;
   transition: 0.4s;
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .card:hover {
@@ -107,19 +94,15 @@ footer {
   text-align: center;
   background: rgba(0,0,0,0.2);
 }
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 </style>
 </head>
 
 <body>
 
+<div id="particles-js"></div>
+
 <nav>
-  <h1>JenaTech Labs</h1>
+  <h2>JenaTech Labs</h2>
   <div>
     <a href="#">Home</a>
     <a href="#services">Services</a>
@@ -156,18 +139,20 @@ footer {
   <p>© 2026 JenaTech Labs</p>
 </footer>
 
+<!-- Particles JS -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 <script>
-const cards = document.querySelectorAll('.card');
-
-window.addEventListener('scroll', () => {
-  cards.forEach(card => {
-    const position = card.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.2;
-
-    if(position < screenPosition) {
-      card.classList.add('show');
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    size: { value: 3 },
+    move: { speed: 2 },
+    line_linked: {
+      enable: true,
+      opacity: 0.2
     }
-  });
+  }
 });
 </script>
 
