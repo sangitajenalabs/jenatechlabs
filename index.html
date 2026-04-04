@@ -11,65 +11,69 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0f172a, #020617);
+  background: linear-gradient(135deg, #1e3a8a, #9333ea);
   color: white;
+  overflow-x: hidden;
 }
 
 /* Navbar */
 nav {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
-  background: rgba(2,6,23,0.8);
+  background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   padding: 15px 40px;
 }
 
-nav h1 {
-  margin: 0;
-  font-size: 22px;
-}
+nav h1 { margin: 0; }
 
 nav a {
   color: white;
   text-decoration: none;
   margin-left: 20px;
-  font-size: 14px;
 }
 
 /* Hero */
 .hero {
   text-align: center;
-  padding: 120px 20px;
+  padding: 140px 20px;
+  animation: fadeIn 1.5s ease;
 }
 
 .hero h2 {
-  font-size: 48px;
-  margin-bottom: 10px;
+  font-size: 50px;
 }
 
 .hero p {
-  color: #94a3b8;
   font-size: 18px;
+  opacity: 0.9;
 }
 
 .btn {
   margin-top: 25px;
   padding: 12px 28px;
-  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  background: white;
+  color: #1e3a8a;
   border-radius: 8px;
   text-decoration: none;
-  color: white;
   display: inline-block;
+  transition: 0.3s;
 }
 
-/* Sections */
+.btn:hover {
+  background: #e0e7ff;
+}
+
+/* Section */
 .section {
   padding: 80px 20px;
   text-align: center;
 }
 
+/* Cards */
 .services {
   display: flex;
   flex-wrap: wrap;
@@ -78,31 +82,42 @@ nav a {
 }
 
 .card {
-  background: rgba(30,41,59,0.7);
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
   padding: 25px;
   width: 260px;
-  border-radius: 12px;
-  transition: 0.3s;
+  border-radius: 15px;
+  transition: 0.4s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  background: rgba(30,41,59,1);
+  transform: scale(1.05);
 }
 
 /* Footer */
 footer {
   padding: 20px;
   text-align: center;
-  color: #94a3b8;
-  background: #020617;
+  background: rgba(0,0,0,0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
 <nav>
   <h1>JenaTech Labs</h1>
   <div>
@@ -112,47 +127,49 @@ footer {
   </div>
 </nav>
 
-<!-- Hero -->
 <section class="hero">
-  <h2>Building Intelligent Digital Systems</h2>
+  <h2>Smart Tech for a Connected Future</h2>
   <p>IoT • AI • Software Engineering</p>
-  <a href="#contact" class="btn">Get in Touch</a>
+  <a href="#contact" class="btn">Get Started</a>
 </section>
 
-<!-- Services -->
 <section class="section" id="services">
   <h2>Our Services</h2>
   <div class="services">
-    <div class="card">
-      <h3>IoT Solutions</h3>
-      <p>Smart tracking systems, device integration, automation.</p>
-    </div>
-    <div class="card">
-      <h3>AI & ML</h3>
-      <p>Predictive analytics, NLP, intelligent data processing.</p>
-    </div>
-    <div class="card">
-      <h3>Software Development</h3>
-      <p>Web apps, APIs, dashboards, scalable architecture.</p>
-    </div>
+    <div class="card">IoT Solutions</div>
+    <div class="card">AI & Machine Learning</div>
+    <div class="card">Software Development</div>
   </div>
 </section>
 
-<!-- About -->
 <section class="section">
   <h2>About Us</h2>
-  <p>JenaTech Labs builds next-generation technology solutions combining IoT, AI, and software engineering.</p>
+  <p>We build intelligent digital systems combining IoT, AI and scalable software.</p>
 </section>
 
-<!-- Contact -->
 <section class="section" id="contact">
   <h2>Contact</h2>
-  <p>Email: info@jenatechlabs.com</p>
+  <p>info@jenatechlabs.com</p>
 </section>
 
 <footer>
   <p>© 2026 JenaTech Labs</p>
 </footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+  cards.forEach(card => {
+    const position = card.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2;
+
+    if(position < screenPosition) {
+      card.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
