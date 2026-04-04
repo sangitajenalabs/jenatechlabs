@@ -20,8 +20,9 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background: white;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  background: rgba(37, 99, 235, 0.9); /* blue tone */
+  backdrop-filter: blur(10px);
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,11 +30,22 @@ nav {
   z-index: 1000;
 }
 
+/* Logo */
+nav h2 {
+  color: white;
+}
+
+/* Links */
 nav a {
-  color: #0f172a;
+  color: white;
   text-decoration: none;
   margin-left: 20px;
   font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.8;
 }
 
 /* Container */
