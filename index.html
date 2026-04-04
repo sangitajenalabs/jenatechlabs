@@ -1,117 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JenaTech Labs</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-    }
-    header {
-      padding: 20px;
-      text-align: center;
-      background: #020617;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-    }
-    .hero h2 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 18px;
-      color: #94a3b8;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      width: 250px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      margin-top: 40px;
-      color: #94a3b8;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JenaTech Labs</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: white;
+}
+
+/* Navbar */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(2,6,23,0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #94a3b8;
+  font-size: 18px;
+}
+
+.btn {
+  margin-top: 25px;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+}
+
+/* Sections */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.card {
+  background: rgba(30,41,59,0.7);
+  padding: 25px;
+  width: 260px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: rgba(30,41,59,1);
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  color: #94a3b8;
+  background: #020617;
+}
+</style>
 </head>
+
 <body>
 
-<header>
+<!-- Navbar -->
+<nav>
   <h1>JenaTech Labs</h1>
-  <p>IoT • AI • Software Engineering</p>
-</header>
+  <div>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
+<!-- Hero -->
 <section class="hero">
-  <h2>Building Smart Solutions for the Future</h2>
-  <p>We create intelligent IoT systems, AI solutions, and scalable software.</p>
-  <a href="#contact" class="btn">Contact Us</a>
+  <h2>Building Intelligent Digital Systems</h2>
+  <p>IoT • AI • Software Engineering</p>
+  <a href="#contact" class="btn">Get in Touch</a>
 </section>
 
-<section class="section">
+<!-- Services -->
+<section class="section" id="services">
   <h2>Our Services</h2>
   <div class="services">
     <div class="card">
       <h3>IoT Solutions</h3>
-      <p>Smart device integration, tracking systems, and automation.</p>
+      <p>Smart tracking systems, device integration, automation.</p>
     </div>
     <div class="card">
-      <h3>AI & Machine Learning</h3>
-      <p>Data-driven intelligence and predictive analytics.</p>
+      <h3>AI & ML</h3>
+      <p>Predictive analytics, NLP, intelligent data processing.</p>
     </div>
     <div class="card">
       <h3>Software Development</h3>
-      <p>Web apps, dashboards, APIs, and scalable systems.</p>
+      <p>Web apps, APIs, dashboards, scalable architecture.</p>
     </div>
   </div>
 </section>
 
+<!-- About -->
 <section class="section">
   <h2>About Us</h2>
-  <p>
-    JenaTech Labs is a technology startup focused on building innovative solutions
-    in IoT, Artificial Intelligence, and Software Development.
-  </p>
+  <p>JenaTech Labs builds next-generation technology solutions combining IoT, AI, and software engineering.</p>
 </section>
 
+<!-- Contact -->
 <section class="section" id="contact">
   <h2>Contact</h2>
   <p>Email: info@jenatechlabs.com</p>
 </section>
 
 <footer>
-  <p>© 2026 JenaTech Labs. All rights reserved.</p>
+  <p>© 2026 JenaTech Labs</p>
 </footer>
 
 </body>
