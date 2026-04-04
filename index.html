@@ -49,11 +49,14 @@ nav a {
 }
 
 /* Hero */
-.hero {
-  text-align: center;
-  padding: 160px 20px 120px;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
-  color: white;
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.1), transparent);
 }
 .hero p {
   color: rgba(255,255,255,0.9);
