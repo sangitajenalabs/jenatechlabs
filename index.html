@@ -7,15 +7,20 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Icons -->
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
 <style>
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: white;
-  overflow-x: hidden;
 }
 
-/* Particles background */
+/* Particles */
 #particles-js {
   position: fixed;
   width: 100%;
@@ -36,12 +41,6 @@ nav {
   padding: 15px 40px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-}
-
 /* Hero */
 .hero {
   text-align: center;
@@ -49,11 +48,11 @@ nav a {
 }
 
 .hero h2 {
-  font-size: 50px;
+  font-size: 48px;
 }
 
+/* Button */
 .btn {
-  margin-top: 25px;
   padding: 12px 28px;
   background: white;
   color: #1e3a8a;
@@ -61,7 +60,7 @@ nav a {
   text-decoration: none;
 }
 
-/* Section */
+/* Sections */
 .section {
   padding: 80px 20px;
   text-align: center;
@@ -81,7 +80,7 @@ nav a {
   padding: 25px;
   width: 260px;
   border-radius: 15px;
-  transition: 0.4s;
+  transition: 0.3s;
 }
 
 .card:hover {
@@ -90,8 +89,8 @@ nav a {
 
 /* Footer */
 footer {
-  padding: 20px;
   text-align: center;
+  padding: 20px;
   background: rgba(0,0,0,0.2);
 }
 </style>
@@ -103,34 +102,39 @@ footer {
 
 <nav>
   <h2>JenaTech Labs</h2>
-  <div>
-    <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </div>
 </nav>
 
-<section class="hero">
+<section class="hero" data-aos="fade-up">
   <h2>Smart Tech for a Connected Future</h2>
   <p>IoT • AI • Software Engineering</p>
+  <br>
   <a href="#contact" class="btn">Get Started</a>
 </section>
 
-<section class="section" id="services">
+<section class="section" data-aos="fade-up">
   <h2>Our Services</h2>
   <div class="services">
-    <div class="card">IoT Solutions</div>
-    <div class="card">AI & Machine Learning</div>
-    <div class="card">Software Development</div>
+    <div class="card" data-aos="zoom-in">
+      <h3>📡 IoT Solutions</h3>
+      <p>Smart tracking and automation systems.</p>
+    </div>
+    <div class="card" data-aos="zoom-in">
+      <h3>🤖 AI & ML</h3>
+      <p>Predictive analytics and intelligent apps.</p>
+    </div>
+    <div class="card" data-aos="zoom-in">
+      <h3>💻 Software</h3>
+      <p>Web apps, APIs and scalable systems.</p>
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" data-aos="fade-right">
   <h2>About Us</h2>
-  <p>We build intelligent digital systems combining IoT, AI and scalable software.</p>
+  <p>We build next-gen digital systems using IoT, AI and modern software.</p>
 </section>
 
-<section class="section" id="contact">
+<section class="section" id="contact" data-aos="fade-left">
   <h2>Contact</h2>
   <p>info@jenatechlabs.com</p>
 </section>
@@ -139,21 +143,24 @@ footer {
   <p>© 2026 JenaTech Labs</p>
 </footer>
 
-<!-- Particles JS -->
+<!-- Particles -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 <script>
 particlesJS("particles-js", {
   particles: {
-    number: { value: 60 },
+    number: { value: 70 },
     size: { value: 3 },
     move: { speed: 2 },
-    line_linked: {
-      enable: true,
-      opacity: 0.2
-    }
+    line_linked: { enable: true, opacity: 0.2 }
   }
 });
+</script>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
 </script>
 
 </body>
