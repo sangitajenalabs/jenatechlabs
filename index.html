@@ -7,6 +7,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 
 /* ======================
@@ -20,7 +21,9 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
-
+h1, h2, h3, h4,p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
 /* ======================
    STRIPE BACKGROUND GLOWS
 ====================== */
@@ -28,30 +31,29 @@ body::before,
 body::after {
   content: "";
   position: fixed;
-  width: 600px;
-  height: 600px;
+  width: 700px;            /* slightly bigger = smoother spread */
+  height: 700px;
   border-radius: 50%;
   z-index: -1;
-  filter: blur(90px);
-  opacity: 0.6;
-  animation: floatBlob 12s ease-in-out infinite alternate;
+  filter: blur(120px);     /* more blur = softer */
+  opacity: 0.35;           /* key change: reduce intensity */
+  animation: floatBlob 18s ease-in-out infinite alternate;
 }
 
 /* LEFT BLOB */
 body::before {
-  background: radial-gradient(circle, rgba(99,102,241,0.25), transparent 60%);
-  top: -200px;
-  left: -200px;
+  background: radial-gradient(circle, rgba(99,102,241,0.12), transparent 70%);
+  top: -250px;
+  left: -250px;
 }
 
 /* RIGHT BLOB */
 body::after {
-  background: radial-gradient(circle, rgba(34,211,238,0.20), transparent 60%);
-  bottom: -200px;
-  right: -200px;
-  animation-delay: 2s;
+  background: radial-gradient(circle, rgba(34,211,238,0.10), transparent 70%);
+  bottom: -250px;
+  right: -250px;
+  animation-delay: 3s;
 }
-
 /* ANIMATION */
 @keyframes floatBlob {
   0% {
@@ -73,57 +75,172 @@ body::after {
 /* ======================
    NAVBAR
 ====================== */
-nav {
+/* NAVBAR */
+/* ======================
+   NAV BASE
+====================== */
+.nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
   z-index: 1000;
+
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+
+  transition: all 0.35s ease;
 }
 
-/* NEW: centered container inside navbar */
+/* SCROLL EFFECT */
+.nav.scrolled {
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+/* INNER */
 .nav-inner {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: auto;
-  padding: 16px 20px;
+  padding: 14px 20px;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
-nav h2 {
-  font-size: 18px;
+
+/* ======================
+   LOGO (GRADIENT TEXT)
+====================== */
+.logo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+
+  background: linear-gradient(90deg, #0a2540, #635bff, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #425466;
-  font-weight: 500;
-  transition: 0.2s;
+.logo:hover {
+  transform: scale(1.05);
 }
 
-nav a:hover {
-  color: #0a2540;
-}
+/* ======================
+   LINKS
+====================== */
 .nav-links {
   display: flex;
-  gap: 22px;
-  align-items: center;
+  gap: 30px;
 }
 
 .nav-links a {
+  position: relative;
   text-decoration: none;
-  color: #425466;
+  color: #475569;
   font-weight: 500;
-  transition: 0.2s;
+  transition: 0.25s;
+}
+
+/* animated underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #635bff, #22d3ee);
+  transition: 0.3s;
+  transform: translateX(-50%);
 }
 
 .nav-links a:hover {
   color: #0a2540;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ACTIVE LINK */
+.nav-links a.active {
+  color: #0a2540;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ======================
+   ACTIONS
+====================== */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-login {
+  text-decoration: none;
+  color: #475569;
+  font-weight: 500;
+  transition: 0.25s;
+}
+
+.nav-login:hover {
+  color: #0a2540;
+}
+
+/* 🔥 GLOW CTA BUTTON */
+.nav-cta {
+  position: relative;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #635bff, #22d3ee);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  overflow: hidden;
+
+  box-shadow: 0 10px 25px rgba(99,91,255,0.35);
+  transition: 0.3s;
+}
+
+/* glow animation */
+.nav-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+
+.nav-cta:hover::before {
+  transform: translateX(100%);
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(99,91,255,0.45);
+}
+
+/* ======================
+   MICRO INTERACTION
+====================== */
+.nav-links a,
+.nav-login {
+  transform: translateY(0);
+}
+
+.nav-links a:hover,
+.nav-login:hover {
+  transform: translateY(-1px);
 }
 /* ======================
    HERO
@@ -141,7 +258,8 @@ nav a:hover {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, #eef2ff, #f8fafc, #ecfeff);
+  background: linear-gradient(120deg, #ffffff, #f8fafc, #f1f5f9);
+
   z-index: 0;
 }
 
@@ -151,19 +269,19 @@ nav a:hover {
   position: absolute;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at 30% 30%, rgba(99,91,255,0.25), transparent 40%),
-              radial-gradient(circle at 70% 70%, rgba(34,211,238,0.25), transparent 40%);
-  animation: moveGradient 12s linear infinite;
+  background: 
+   radial-gradient(circle at 25% 30%, rgba(99,91,255,0.06), transparent 65%),
+    radial-gradient(circle at 75% 70%, rgba(34,211,238,0.05), transparent 65%);
+  animation: moveGradient 14s linear infinite;
 }
 
-/* subtle grid overlay */
-.hero-bg::after {
+/* softer grid */
+.hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.6), transparent 70%);
+  pointer-events: none;
 }
 
 /* content */
@@ -213,6 +331,7 @@ nav a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 /* animation */
 @keyframes moveGradient {
   0% { transform: translate(0,0); }
@@ -245,9 +364,9 @@ nav a:hover {
 .section-title {
   font-size: 40px;
   font-weight: 700;
-  letter-spacing: -1.5px;
+  letter-spacing: -1.2px;
   margin: 10px 0;
-
+  font-family: 'Plus Jakarta Sans', sans-serif;
   background: linear-gradient(90deg, #0a2540, #635bff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -656,6 +775,192 @@ footer {
   .grid, .price-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 42px; }
 }
+
+/* ======================
+   HAMBURGER
+====================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #0a2540;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* ANIMATION → X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.hamburger.active span:nth-child(2) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* ======================
+   MOBILE MENU
+====================== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 260px;
+  height: 100vh;
+
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+
+  display: flex;
+  flex-direction: column;
+  padding: 100px 30px;
+  gap: 20px;
+
+  transition: 0.4s ease;
+  z-index: 1000;
+}
+
+/* OPEN */
+.mobile-menu.active {
+  right: 0;
+}
+
+/* LINKS */
+.mobile-menu a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #0a2540;
+  font-weight: 500;
+  transition: 0.25s;
+}
+
+.mobile-menu a:hover {
+  transform: translateX(6px);
+  color: #635bff;
+}
+
+/* CTA */
+.mobile-cta {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 999px;
+  text-align: center;
+  background: linear-gradient(90deg, #635bff, #22d3ee);
+  color: white !important;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+@media(max-width: 900px){
+
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}/* ======================
+   HAMBURGER
+====================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #0a2540;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* ANIMATION → X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.hamburger.active span:nth-child(2) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* ======================
+   MOBILE MENU
+====================== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 260px;
+  height: 100vh;
+
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+
+  display: flex;
+  flex-direction: column;
+  padding: 100px 30px;
+  gap: 20px;
+
+  transition: 0.4s ease;
+  z-index: 1000;
+}
+
+/* OPEN */
+.mobile-menu.active {
+  right: 0;
+}
+
+/* LINKS */
+.mobile-menu a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #0a2540;
+  font-weight: 500;
+  transition: 0.25s;
+}
+
+.mobile-menu a:hover {
+  transform: translateX(6px);
+  color: #635bff;
+}
+
+/* CTA */
+.mobile-cta {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 999px;
+  text-align: center;
+  background: linear-gradient(90deg, #635bff, #22d3ee);
+  color: white !important;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+@media(max-width: 900px){
+
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
 </style>
 </head>
 
@@ -663,15 +968,38 @@ footer {
 <body>
 
 <!-- NAV -->
-<nav>
+<nav class="nav" id="navbar">
   <div class="nav-inner">
-    <h2>JenaTech Labs</h2>
 
+    <h2 class="logo">JenaTechLabs</h2>
+
+    <!-- DESKTOP LINKS -->
     <div class="nav-links">
-  <a href="#">Products</a>
-  <a href="#">Developers</a>
-   <a href="#">Contact</a>
-</div>
+      <a href="#products" class="active">Products</a>
+      <a href="#skills">Developers</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="#" class="nav-login">Sign in</a>
+      <a href="#" class="nav-cta">Start Free</a>
+    </div>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#products">Products</a>
+    <a href="#skills">Developers</a>
+    <a href="#contact">Contact</a>
+    <a href="#">Sign in</a>
+    <a href="#" class="mobile-cta">Start Free</a>
   </div>
 </nav>
 
@@ -691,13 +1019,13 @@ footer {
     </p>
 
     <div class="hero-buttons">
-      <a class="btn-primary" href="#">Get Started</a>
-      <a class="btn-secondary" href="#">View Products</a>
+      <a class="btn-primary" href="#skills">Get Started</a>
+      <a class="btn-secondary" href="#products">View Products</a>
     </div>
   </div>
 </section>
 <!-- FEATURES -->
-<section class="section">
+<section class="section" id="skills">
   <div class="container">
     <h2>Engineering Skills & Capabilities</h2>
 
@@ -757,7 +1085,7 @@ footer {
 <!-- Product -->
 <!-- Product -->
 
-<section class="section product-section">
+<section class="section product-section" id="products">
   <div class="container">
 
     <!-- HEADER -->
@@ -956,6 +1284,15 @@ setInterval(() => {
 
 }, 1500);
 
+</script>
+<script>
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+});
 </script>
 </body>
 </html>
