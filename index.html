@@ -3,43 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JenaTech Labs</title>
+<title>JenaTech Labs - SaaS Grade</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* =========================
+   GLOBAL
+========================= */
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #f8fafc;
-  color: #0f172a;
+  font-family: 'Inter', sans-serif;
+  background: #0b1220;
+  color: #e5e7eb;
+  overflow-x: hidden;
 }
 
-/* Navbar */
+/* glowing background */
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(34,211,238,0.18), transparent 60%);
+  top: -200px;
+  left: -200px;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59,130,246,0.18), transparent 60%);
+  bottom: -200px;
+  right: -200px;
+  z-index: -1;
+}
+
+/* =========================
+   NAVBAR
+========================= */
 nav {
   position: fixed;
   width: 100%;
   top: 0;
-  /*background: rgba(56, 189, 248, 0.9);  ocean blue */
-  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
-  backdrop-filter: blur(10px);
-  color: white;
+  z-index: 1000;
+
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding: 16px 40px;
 }
 
-/* Logo */
 nav h2 {
+  font-size: 18px;
+  font-weight: 700;
   color: white;
 }
 
-/* Links */
 nav a {
-  color: white;
+  color: #cbd5e1;
   text-decoration: none;
   margin-left: 20px;
   font-weight: 500;
@@ -47,48 +76,65 @@ nav a {
 }
 
 nav a:hover {
-  opacity: 0.8;
-}
-/* Container */
-.container {
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 160px 20px 120px;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
   color: white;
 }
 
+/* =========================
+   HERO
+========================= */
+.hero {
+  text-align: center;
+  padding: 180px 20px 120px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(34,211,238,0.12), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(59,130,246,0.12), transparent 40%),
+    #0b1220;
+}
+
 .hero h2 {
-  font-size: 48px;
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: -1px;
   margin-bottom: 10px;
 }
 
 .hero p {
-  color: rgba(255,255,255,0.9);
+  color: #94a3b8;
+  font-size: 18px;
 }
 
 .btn {
-  margin-top: 20px;
+  margin-top: 25px;
   padding: 12px 28px;
-  background: white;
-  color: #2563eb;
-  border-radius: 8px;
+  background: linear-gradient(90deg, #3b82f6, #22d3ee);
+  color: white;
+  border-radius: 999px;
   text-decoration: none;
   display: inline-block;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-/* Sections */
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   SECTION
+========================= */
 .section {
   padding: 80px 20px;
   text-align: center;
 }
 
-/* Services */
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* =========================
+   CARDS (GLASS STYLE)
+========================= */
 .services {
   display: flex;
   flex-wrap: wrap;
@@ -98,19 +144,23 @@ nav a:hover {
 }
 
 .card {
-  background: white;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
   padding: 25px;
   width: 260px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
   transition: 0.3s;
 }
 
 .card:hover {
   transform: translateY(-8px);
+  border-color: rgba(34,211,238,0.4);
 }
 
-/* Product */
+/* =========================
+   PRODUCT
+========================= */
 .product {
   display: flex;
   flex-wrap: wrap;
@@ -120,127 +170,117 @@ nav a:hover {
 }
 
 .product-box {
-  background: white;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
   padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
 }
 
-/* Footer */
+/* =========================
+   FOOTER
+========================= */
 footer {
   padding: 25px;
   text-align: center;
-  background: white;
   color: #64748b;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
 }
 
- /* Hero Animations */
+/* =========================
+   ANIMATIONS
+========================= */
 .hero h2 {
-  opacity: 0;
-  transform: translateY(30px);
   animation: fadeUp 1s ease forwards;
 }
 
 .hero p {
+  animation: fadeUp 1s ease 0.2s forwards;
   opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.3s;
 }
 
-.hero .btn {
+.btn {
+  animation: fadeUp 1s ease 0.4s forwards;
   opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.6s;
 }
 
-/* Floating effect */
-.hero h2 {
-  animation: fadeUp 1s ease forwards, float 4s ease-in-out infinite;
-}
-
-/* Keyframes */
 @keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-} 
-  
 </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
+<!-- NAV -->
 <nav>
   <h2>JenaTech Labs</h2>
   <div>
     <a href="#">Home</a>
     <a href="#services">Services</a>
+    <a href="#product">Product</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<!-- Hero -->
+<!-- HERO -->
 <section class="hero">
   <div class="container">
-    <h2>Smart Tech for a Connected Future</h2>
-    <p>IoT • AI • Software Engineering</p>
-    <a href="#contact" class="btn">Get Started</a>
+    <h2>Build Modern SaaS & AI Products</h2>
+    <p>Scalable Web Apps • AI Systems • IoT Solutions</p>
+    <a href="#contact" class="btn">Start Your Project</a>
   </div>
 </section>
 
-<!-- Services -->
+<!-- SERVICES -->
 <section class="section" id="services">
   <div class="container">
     <h2>Our Services</h2>
+
     <div class="services">
       <div class="card">
-        <h3>📡 IoT Solutions</h3>
-        <p>Smart tracking systems and automation.</p>
+        <h3>🚀 SaaS Development</h3>
+        <p>Scalable cloud-based applications.</p>
       </div>
+
       <div class="card">
-        <h3>🤖 AI & ML</h3>
-        <p>Predictive analytics and intelligent systems.</p>
+        <h3>🤖 AI Systems</h3>
+        <p>Intelligent automation and ML models.</p>
       </div>
+
       <div class="card">
-        <h3>💻 Software Development</h3>
-        <p>Web apps, APIs and scalable solutions.</p>
+        <h3>💻 Web Apps</h3>
+        <p>Modern React & Flask applications.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Product -->
-<section class="section" style="background:#f1f5f9;">
+<!-- PRODUCT -->
+<section class="section" id="product">
   <div class="container">
-    <h2>Our Product</h2>
-    <p style="color:#64748b;">Introducing our flagship solution</p>
+    <h2>Our Flagship Product</h2>
+    <p style="color:#94a3b8;">Next-gen SaaS platform</p>
 
     <div class="product">
-      <div style="flex:1; min-width:280px;">
-        <h3>🚗 JTL Track</h3>
-        <p style="color:#475569;">
-          A smart GPS tracking system for vehicles and assets with real-time monitoring.
+      <div style="flex:1; min-width:280px; text-align:left;">
+        <h3>⚡ JTL SaaS Platform</h3>
+        <p style="color:#94a3b8;">
+          All-in-one solution for tracking, analytics, and automation.
         </p>
 
-        <ul style="text-align:left; color:#475569;">
-          <li>📍 Live tracking</li>
-          <li>📊 Analytics dashboard</li>
-          <li>🚨 Alerts</li>
-          <li>📡 IoT integration</li>
+        <ul style="color:#94a3b8;">
+          <li>Real-time dashboards</li>
+          <li>AI-powered insights</li>
+          <li>Cloud integration</li>
         </ul>
 
         <a href="#contact" class="btn">Request Demo</a>
@@ -249,8 +289,8 @@ footer {
       <div style="flex:1; min-width:280px;">
         <div class="product-box">
           <h4>Dashboard Preview</h4>
-          <div style="height:150px; background:#e2e8f0; border-radius:10px; display:flex; align-items:center; justify-content:center;">
-            🚀 Coming Soon
+          <div style="height:160px; background:rgba(255,255,255,0.03); border-radius:10px; display:flex; align-items:center; justify-content:center; color:#64748b;">
+            🚀 SaaS UI Coming Soon
           </div>
         </div>
       </div>
@@ -258,27 +298,19 @@ footer {
   </div>
 </section>
 
-<!-- About -->
-<section class="section">
-  <div class="container">
-    <h2>About Us</h2>
-    <p>
-      JenaTech Labs builds next-generation technology solutions in IoT, AI, and software engineering.
-    </p>
-  </div>
-</section>
-
-<!-- Contact -->
+<!-- CONTACT -->
 <section class="section" id="contact">
   <div class="container">
-    <h2>Contact</h2>
+    <h2>Contact Us</h2>
+    <p style="color:#94a3b8;">Let's build something powerful</p>
+
     <p>Email: info@jenatechlabs.com</p>
   </div>
 </section>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 JenaTech Labs</p>
+  <p>© 2026 JenaTech Labs — Built with SaaS Grade UI</p>
 </footer>
 
 </body>
