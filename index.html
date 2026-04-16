@@ -3,29 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JenaTech Labs - SaaS Grade</title>
+<title>JenaTech Labs</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* =========================
-   GLOBAL
-========================= */
+/* ======================
+   BASE
+====================== */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0b1220;
-  color: #e5e7eb;
+  background: #ffffff;
+  color: #0a2540;
   overflow-x: hidden;
 }
 
-/* glowing background */
+/* Soft background blobs (Stripe style) */
 body::before {
   content: "";
   position: fixed;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(34,211,238,0.18), transparent 60%);
+  background: radial-gradient(circle, rgba(99,102,241,0.15), transparent 60%);
   top: -200px;
   left: -200px;
   z-index: -1;
@@ -36,94 +36,99 @@ body::after {
   position: fixed;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(59,130,246,0.18), transparent 60%);
+  background: radial-gradient(circle, rgba(34,211,238,0.12), transparent 60%);
   bottom: -200px;
   right: -200px;
   z-index: -1;
 }
 
-/* =========================
+/* ======================
    NAVBAR
-========================= */
+====================== */
 nav {
   position: fixed;
-  width: 100%;
   top: 0;
-  z-index: 1000;
-
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-
+  width: 100%;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 40px;
+  z-index: 1000;
 }
 
 nav h2 {
   font-size: 18px;
   font-weight: 700;
-  color: white;
+  color: #0a2540;
 }
 
 nav a {
-  color: #cbd5e1;
-  text-decoration: none;
   margin-left: 20px;
+  text-decoration: none;
+  color: #425466;
   font-weight: 500;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 nav a:hover {
-  color: white;
+  color: #0a2540;
 }
 
-/* =========================
-   HERO
-========================= */
+/* ======================
+   HERO (Stripe style)
+====================== */
 .hero {
   text-align: center;
   padding: 180px 20px 120px;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(34,211,238,0.12), transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(59,130,246,0.12), transparent 40%),
-    #0b1220;
 }
 
-.hero h2 {
-  font-size: 52px;
-  font-weight: 700;
-  letter-spacing: -1px;
-  margin-bottom: 10px;
+.hero h1 {
+  font-size: 56px;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 16px;
 }
 
 .hero p {
-  color: #94a3b8;
   font-size: 18px;
+  color: #425466;
+  max-width: 600px;
+  margin: auto;
 }
 
-.btn {
-  margin-top: 25px;
-  padding: 12px 28px;
-  background: linear-gradient(90deg, #3b82f6, #22d3ee);
+.btn-primary {
+  margin-top: 28px;
+  padding: 12px 24px;
+  background: #635bff;
   color: white;
   border-radius: 999px;
   text-decoration: none;
   display: inline-block;
   font-weight: 600;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
+.btn-primary:hover {
+  background: #4f46e5;
 }
 
-/* =========================
+.btn-secondary {
+  margin-left: 10px;
+  padding: 12px 24px;
+  border: 1px solid #d0d7de;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #0a2540;
+}
+
+/* ======================
    SECTION
-========================= */
+====================== */
 .section {
-  padding: 80px 20px;
+  padding: 90px 20px;
   text-align: center;
 }
 
@@ -132,88 +137,106 @@ nav a:hover {
   margin: auto;
 }
 
-/* =========================
-   CARDS (GLASS STYLE)
-========================= */
-.services {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 40px;
+/* ======================
+   FEATURES GRID (Stripe style)
+====================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 50px;
 }
 
 .card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 25px;
-  width: 260px;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
   border-radius: 16px;
-  backdrop-filter: blur(12px);
-  transition: 0.3s;
+  padding: 24px;
+  text-align: left;
+  transition: 0.2s;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(34,211,238,0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
-/* =========================
-   PRODUCT
-========================= */
+.card h3 {
+  margin-top: 0;
+  color: #0a2540;
+}
+
+.card p {
+  color: #425466;
+}
+
+/* ======================
+   PRODUCT SECTION
+====================== */
 .product {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   gap: 40px;
-  margin-top: 40px;
+  align-items: center;
+  margin-top: 60px;
+  flex-wrap: wrap;
 }
 
 .product-box {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 30px;
+  flex: 1;
+  min-width: 280px;
   border-radius: 16px;
-  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fafafa;
+  padding: 30px;
 }
 
-/* =========================
-   FOOTER
-========================= */
-footer {
-  padding: 25px;
+/* ======================
+   CTA SECTION
+====================== */
+.cta {
+  background: #0a2540;
+  color: white;
+  padding: 100px 20px;
   text-align: center;
-  color: #64748b;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.02);
+  margin-top: 80px;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
-.hero h2 {
-  animation: fadeUp 1s ease forwards;
+.cta h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-.hero p {
-  animation: fadeUp 1s ease 0.2s forwards;
-  opacity: 0;
+.cta p {
+  color: rgba(255,255,255,0.7);
 }
 
-.btn {
-  animation: fadeUp 1s ease 0.4s forwards;
-  opacity: 0;
+.cta a {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 12px 24px;
+  background: white;
+  color: #0a2540;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ======================
+   FOOTER
+====================== */
+footer {
+  padding: 30px;
+  text-align: center;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+@media(max-width: 900px){
+  .grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 40px; }
 }
 </style>
 </head>
@@ -224,93 +247,83 @@ footer {
 <nav>
   <h2>JenaTech Labs</h2>
   <div>
-    <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="#product">Product</a>
-    <a href="#contact">Contact</a>
+    <a href="#">Products</a>
+    <a href="#">Solutions</a>
+    <a href="#">Developers</a>
+    <a href="#">Contact</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="container">
-    <h2>Build Modern SaaS & AI Products</h2>
-    <p>Scalable Web Apps • AI Systems • IoT Solutions</p>
-    <a href="#contact" class="btn">Start Your Project</a>
-  </div>
+  <h1>Build the future of SaaS products</h1>
+  <p>Modern AI, IoT and cloud platforms designed for scalable digital businesses.</p>
+
+  <a class="btn-primary" href="#">Start building</a>
+  <a class="btn-secondary" href="#">View docs</a>
 </section>
 
-<!-- SERVICES -->
-<section class="section" id="services">
+<!-- FEATURES -->
+<section class="section">
   <div class="container">
-    <h2>Our Services</h2>
+    <h2>Everything you need to build SaaS</h2>
 
-    <div class="services">
+    <div class="grid">
       <div class="card">
-        <h3>🚀 SaaS Development</h3>
-        <p>Scalable cloud-based applications.</p>
+        <h3>⚡ Fast APIs</h3>
+        <p>High-performance backend systems built for scale.</p>
       </div>
 
       <div class="card">
-        <h3>🤖 AI Systems</h3>
-        <p>Intelligent automation and ML models.</p>
+        <h3>🤖 AI Ready</h3>
+        <p>Integrate machine learning into your products easily.</p>
       </div>
 
       <div class="card">
-        <h3>💻 Web Apps</h3>
-        <p>Modern React & Flask applications.</p>
+        <h3>☁️ Cloud Native</h3>
+        <p>Deploy scalable applications across modern cloud infra.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PRODUCT -->
-<section class="section" id="product">
+<section class="section">
   <div class="container">
-    <h2>Our Flagship Product</h2>
-    <p style="color:#94a3b8;">Next-gen SaaS platform</p>
+    <h2>Flagship Product</h2>
+    <p style="color:#425466;">A powerful SaaS platform for real-time analytics</p>
 
     <div class="product">
-      <div style="flex:1; min-width:280px; text-align:left;">
-        <h3>⚡ JTL SaaS Platform</h3>
-        <p style="color:#94a3b8;">
-          All-in-one solution for tracking, analytics, and automation.
-        </p>
-
-        <ul style="color:#94a3b8;">
-          <li>Real-time dashboards</li>
-          <li>AI-powered insights</li>
-          <li>Cloud integration</li>
+      <div class="product-box">
+        <h3>JTL SaaS Platform</h3>
+        <p>Track, analyze and optimize your business in real time.</p>
+        <ul style="color:#425466;">
+          <li>Live dashboards</li>
+          <li>AI insights</li>
+          <li>Cloud sync</li>
         </ul>
-
-        <a href="#contact" class="btn">Request Demo</a>
       </div>
 
-      <div style="flex:1; min-width:280px;">
-        <div class="product-box">
-          <h4>Dashboard Preview</h4>
-          <div style="height:160px; background:rgba(255,255,255,0.03); border-radius:10px; display:flex; align-items:center; justify-content:center; color:#64748b;">
-            🚀 SaaS UI Coming Soon
-          </div>
+      <div class="product-box">
+        <h4>Preview</h4>
+        <div style="height:160px;background:#eaeef2;border-radius:12px;display:flex;align-items:center;justify-content:center;">
+          Dashboard UI
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <div class="container">
-    <h2>Contact Us</h2>
-    <p style="color:#94a3b8;">Let's build something powerful</p>
-
-    <p>Email: info@jenatechlabs.com</p>
-  </div>
+<!-- CTA -->
+<section class="cta">
+  <h2>Start building with JenaTech Labs</h2>
+  <p>From idea to scalable SaaS product in weeks.</p>
+  <a href="#">Get started</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 JenaTech Labs — Built with SaaS Grade UI</p>
+  © 2026 JenaTech Labs — Stripe-inspired UI
 </footer>
 
 </body>
