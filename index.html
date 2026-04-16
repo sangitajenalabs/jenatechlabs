@@ -128,40 +128,96 @@ nav a:hover {
 /* ======================
    HERO
 ====================== */
+/* ================= HERO UPGRADE ================= */
+
 .hero {
+  position: relative;
+  padding: 100px 20px 70px;
   text-align: center;
-  padding: 200px 20px 120px;
+  overflow: hidden;
+}
+
+/* animated gradient background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #eef2ff, #f8fafc, #ecfeff);
+  z-index: 0;
+}
+
+/* moving gradient layer */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(99,91,255,0.25), transparent 40%),
+              radial-gradient(circle at 70% 70%, rgba(34,211,238,0.25), transparent 40%);
+  animation: moveGradient 12s linear infinite;
+}
+
+/* subtle grid overlay */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* content */
+.hero-content {
+  position: relative;
+  z-index: 1;
   max-width: 900px;
   margin: auto;
 }
 
+/* heading */
 .hero h1 {
-  font-size: 55px;
+  font-size: 60px;
+  font-weight: 700;
   line-height: 1.05;
-  letter-spacing: -2.5px;
-  font-weight: 700;
-}
-
-.hero h1 {
-  font-size: 55px;
-  font-weight: 700;
   letter-spacing: -2px;
 
-  background: linear-gradient(90deg, #0a2540, #635bff, #22d3ee);
+  background: linear-gradient(90deg, #0a2540, #635bff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: float 4s ease-in-out infinite;
+  animation: fadeUp 1s ease forwards;
 }
 
+.hero h1 span {
+  display: block;
+  background: linear-gradient(90deg, #635bff, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+/* subtitle */
 .hero p {
   font-size: 20px;
-  color: #425466;
-  margin-top: 18px;
+  color: #475569;
+  margin-top: 20px;
+  line-height: 1.6;
 }
-.hero h2 {
-  animation: fadeUp 1s ease forwards, float 4s ease-in-out infinite;
+
+/* buttons */
+.hero-buttons {
+  margin-top: 30px;
+}
+.hero span {
+  font-weight: 600;
+  background: linear-gradient(90deg, #635bff, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* animation */
+@keyframes moveGradient {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(-10%, -10%); }
+  100% { transform: translate(0,0); }
 }
 
 .product-section {
@@ -365,7 +421,7 @@ nav a:hover {
    SECTION
 ====================== */
 .section {
-  padding: 110px 20px;
+  padding: 70px 20px;
   text-align: center;
 }
 
@@ -622,15 +678,25 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-<div>
-  <h1>Smart Tech for a Connected Future</h1></div>
-    <p>IoT • AI • Software Engineering</p>
-    
+  <div class="hero-bg"></div>
 
-  <a class="btn-primary" href="#">Get Started</a>
-  <a class="btn-secondary" href="#">View products</a>
+  <div class="hero-content">
+    <h1>
+      Build Intelligent Systems<br>
+      
+    </h1>
+    <p><span>GPS Tracking • CRM Systems • Analytics Platforms</span></p>
+    <p>
+      Real-time data platforms, GPS tracking, AI analytics, and SaaS systems —
+      engineered for modern businesses.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="btn-primary" href="#">Get Started</a>
+      <a class="btn-secondary" href="#">View Products</a>
+    </div>
+  </div>
 </section>
-
 <!-- FEATURES -->
 <section class="section">
   <div class="container">
