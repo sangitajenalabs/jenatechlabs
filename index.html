@@ -63,13 +63,19 @@ nav {
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(0,0,0,0.06);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
   z-index: 1000;
 }
 
+/* NEW: centered container inside navbar */
+.nav-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 16px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 nav h2 {
   font-size: 18px;
   font-weight: 700;
@@ -311,12 +317,15 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <h2>JenaTech Labs</h2>
-  <div>
-    <a href="#">Products</a>
-    <a href="#">Features</a>
-    <a href="#">Pricing</a>
-    <a href="#">Contact</a>
+  <div class="nav-inner">
+    <h2>JenaTech Labs</h2>
+
+    <div>
+      <a href="#">Products</a>
+      <a href="#">Solutions</a>
+      <a href="#">Developers</a>
+      <a href="#">Contact</a>
+    </div>
   </div>
 </nav>
 
