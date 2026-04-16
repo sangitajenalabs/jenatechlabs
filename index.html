@@ -1324,72 +1324,117 @@ function setActive(element) {
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-// INIT MAP
+// =======================
+// MAP INIT
+// =======================
 const map = L.map('mapPreview', {
   zoomControl: false,
   attributionControl: false
 }).setView([20.2961, 85.8245], 15);
 
-//L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-//L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png')
-//.addTo(map);
-
+// Light clean basemap
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 19,
   attribution: '&copy; OpenStreetMap & Carto'
 }).addTo(map);
+
+// =======================
 // CAR ICON
+// =======================
 const carIcon = L.icon({
   iconUrl: "https://maps.gstatic.com/mapfiles/ms2/micons/cabs.png",
   iconSize: [28, 28]
 });
 
-// VEHICLE
-let vehicle = { lat: 20.2961, lng: 85.8245 };
+// =======================
+// VEHICLE STATE
+// =======================
+let center = { lat: 20.2961, lng: 85.8245 };
 
-// MARKER
-const marker = L.marker([vehicle.lat, vehicle.lng], { icon: carIcon }).addTo(map);
+let vehicle = {
+  lat: center.lat,
+  lng: center.lng
+};
 
-// ROUTE
+// movement control
+let angle = 0;
+const speedFactor = 0.0006;
+const maxOffset = 0.008;
+
+// =======================
+// MARKER + ROUTE
+// =======================
+const marker = L.marker([vehicle.lat, vehicle.lng], {
+  icon: carIcon
+}).addTo(map);
+
 let path = [[vehicle.lat, vehicle.lng]];
-const line = L.polyline(path, { color: "#635bff" }).addTo(map);
 
-// MOVE
-let angle = 0; // direction in radians
+const line = L.polyline(path, {
+  color: "#635bff",
+  weight: 3
+}).addTo(map);
 
+// =======================
+// ANIMATION LOOP
+// =======================
 setInterval(() => {
+
   let oldLat = vehicle.lat;
   let oldLng = vehicle.lng;
 
-  // slowly change direction
-  angle += (Math.random() - 0.5) * 0.3;
+  // smooth random steering
+  angle += (Math.random() - 0.5) * 0.25;
 
-  // move forward in that direction
-  let speedFactor = 0.0005;
+  let newLat = vehicle.lat + Math.cos(angle) * speedFactor;
+  let newLng = vehicle.lng + Math.sin(angle) * speedFactor;
 
-  vehicle.lat += Math.cos(angle) * speedFactor;
-  vehicle.lng += Math.sin(angle) * speedFactor;
+  // =======================
+  // BOUNDARY CONTROL (keeps car nearby center)
+  // =======================
+  let dLat = newLat - center.lat;
+  let dLng = newLng - center.lng;
 
-  // update marker
+  if (Math.abs(dLat) < maxOffset && Math.abs(dLng) < maxOffset) {
+    vehicle.lat = newLat;
+    vehicle.lng = newLng;
+  } else {
+    // bounce back direction
+    angle += Math.PI / 2;
+  }
+
+  // =======================
+  // UPDATE MARKER
+  // =======================
   marker.setLatLng([vehicle.lat, vehicle.lng]);
 
-  // update route
+  // =======================
+  // UPDATE ROUTE TRAIL
+  // =======================
   path.push([vehicle.lat, vehicle.lng]);
-  if (path.length > 30) path.shift();
+  if (path.length > 40) path.shift();
   line.setLatLngs(path);
 
-  // calculate speed
+  // =======================
+  // SPEED CALCULATION
+  // =======================
   let dist = Math.sqrt(
     Math.pow(vehicle.lat - oldLat, 2) +
     Math.pow(vehicle.lng - oldLng, 2)
   );
 
   let speed = dist * 100000;
-
   document.getElementById("speed").innerText = speed.toFixed(1);
 
-}, 1500);
+  // =======================
+  // SMOOTH CAMERA FOLLOW
+  // =======================
+  map.panTo([vehicle.lat, vehicle.lng], {
+    animate: true,
+    duration: 0.6
+  });
 
+}, 1500);
 </script>
 <script>
 const hamburger = document.getElementById("hamburger");
