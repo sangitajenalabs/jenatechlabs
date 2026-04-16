@@ -6,7 +6,7 @@
 <title>JenaTech Labs </title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
 
 /* ======================
@@ -24,28 +24,45 @@ body {
 /* ======================
    STRIPE BACKGROUND GLOWS
 ====================== */
-body::before {
-  content: "";
-  position: fixed;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(99,102,241,0.15), transparent 60%);
-  top: -250px;
-  left: -250px;
-  z-index: -1;
-  animation: floatGlow 14s ease-in-out infinite alternate;
-}
-
+body::before,
 body::after {
   content: "";
   position: fixed;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(34,211,238,0.12), transparent 60%);
-  bottom: -250px;
-  right: -250px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
   z-index: -1;
-  animation: floatGlow 16s ease-in-out infinite alternate;
+  filter: blur(90px);
+  opacity: 0.6;
+  animation: floatBlob 12s ease-in-out infinite alternate;
+}
+
+/* LEFT BLOB */
+body::before {
+  background: radial-gradient(circle, rgba(99,102,241,0.25), transparent 60%);
+  top: -200px;
+  left: -200px;
+}
+
+/* RIGHT BLOB */
+body::after {
+  background: radial-gradient(circle, rgba(34,211,238,0.20), transparent 60%);
+  bottom: -200px;
+  right: -200px;
+  animation-delay: 2s;
+}
+
+/* ANIMATION */
+@keyframes floatBlob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(40px, 60px) scale(1.1);
+  }
+  100% {
+    transform: translate(-30px, -20px) scale(1);
+  }
 }
 
 @keyframes floatGlow {
@@ -119,16 +136,195 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-size: 64px;
+  font-size: 55px;
   line-height: 1.05;
   letter-spacing: -2.5px;
   font-weight: 700;
 }
 
+.hero h1 {
+  font-size: 55px;
+  font-weight: 700;
+  letter-spacing: -2px;
+
+  background: linear-gradient(90deg, #0a2540, #635bff, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: float 4s ease-in-out infinite;
+}
+
+
 .hero p {
   font-size: 20px;
   color: #425466;
   margin-top: 18px;
+}
+.hero h2 {
+  animation: fadeUp 1s ease forwards, float 4s ease-in-out infinite;
+}
+
+.product-section {
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+}
+
+/* HEADER */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(99,91,255,0.1);
+  color: #635bff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin: 10px 0;
+
+  background: linear-gradient(90deg, #0a2540, #635bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* PRODUCT LAYOUT */
+.product-content {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+}
+
+.product-content h3 {
+  font-size: 26px;
+}
+
+.product-content p {
+  color: #475569;
+}
+
+.feature-list {
+  text-align: left;
+  color: #475569;
+  padding-left: 18px;
+  margin: 20px 0;
+}
+
+/* RIGHT SIDE */
+.product-preview {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* CARD UPGRADE */
+.product-box {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.product-box:hover {
+  transform: translateY(-6px);
+}
+
+/* reverse layout (image left, text right) */
+.product.reverse {
+  flex-direction: row-reverse;
+  margin-top: 80px;
+}
+
+/* CRM UI MOCK */
+.crm-ui {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 13px;
+}
+
+.crm-top {
+  background: #635bff;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.crm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.crm-card {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+/* Keyframes */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ================= MAP PREVIEW ================= */
+.map-wrapper {
+  position: relative;
+  margin-top: 10px;
+}
+
+#mapPreview {
+  width: 100%;
+  height: 240px;
+  border-radius: 12px;
+  filter: brightness(1.05) contrast(0.95) saturate(0.9);
+}
+
+/* overlay UI */
+.map-ui {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(10,37,64,0.85);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.leaflet-container {
+  border-radius: 12px;
 }
 
 /* ======================
@@ -216,15 +412,94 @@ nav a:hover {
 }
 
 .product-box {
-  flex: 1;
-  min-width: 280px;
+  background: white;
   border-radius: 18px;
-  border: 1px solid rgba(0,0,0,0.08);
-  background: linear-gradient(180deg, #ffffff, #f8fafc);
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
+/* SECTION BACKGROUND */
+.product-section {
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+  position: relative;
+  overflow: hidden;
+}
+
+/* soft glow in background */
+.product-section::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(99,91,255,0.15), transparent 70%);
+  top: -150px;
+  right: -150px;
+  filter: blur(80px);
+}
+
+/* CARD WRAPPER */
+.product-card {
+  position: relative;
+}
+
+/* glowing border */
+.card-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #635bff, #22d3ee, #635bff);
+  filter: blur(25px);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+/* MAIN CARD */
+.product-box {
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.12);
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: 0.4s;
+}
+
+.product-box:hover {
+  transform: translateY(-8px) scale(1.01);
+}
+
+/* MAP */
+#mapPreview {
+  height: 240px;
+  border-radius: 12px;
+}
+
+/* overlay UI */
+.map-ui {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(10,37,64,0.85);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+/* fake controls */
+.map-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255,255,255,0.9);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 /* ======================
    PRICING (NEW STRIPE FEATURE)
 ====================== */
@@ -328,6 +603,7 @@ footer {
 </style>
 </head>
 
+
 <body>
 
 <!-- NAV -->
@@ -346,7 +622,8 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <h2>Smart Tech for a Connected Future</h2>
+<div>
+  <h1>Smart Tech for a Connected Future</h1></div>
     <p>IoT • AI • Software Engineering</p>
     
 
@@ -357,90 +634,181 @@ footer {
 <!-- FEATURES -->
 <section class="section">
   <div class="container">
-    <h2>Everything you need</h2>
+    <h2>Engineering Skills & Capabilities</h2>
 
     <div class="grid">
-      <div class="card">
-        <h3>⚡ Fast APIs</h3>
-        <p>High performance backend systems.</p>
-      </div>
+<div class="card">
+  <h3>⚡ Full-Stack & Data Systems</h3>
+  <p>
+    Develop end-to-end applications using Python (FastAPI, Flask), React dashboards, real-time data pipelines (Kafka, Spark), Airflow orchestration, and MinIO storage — building scalable SaaS and analytics platforms.
+  </p>
+</div>
+  <div class="card">
+  <h3>⚡ Backend & Data Engineering</h3>
+  <p>
+    Design high-performance systems using Python (FastAPI, Flask), real-time data pipelines (Kafka, Spark, Delta Lake), workflow orchestration (Airflow), and scalable storage (MinIO) — enabling intelligent dashboards, tracking systems, and analytics platforms.
+  </p>
+</div>
 
-      <div class="card">
-        <h3>🤖 AI Ready</h3>
-        <p>Integrate intelligence into your SaaS.</p>
-      </div>
+  <div class="card">
+    <h3>📡 Real-Time Data Systems</h3>
+    <p>
+      Process streaming data using Kafka, Spark, and Delta Lake for live tracking, alerts, and large-scale analytics.
+    </p>
+  </div>
 
-      <div class="card">
-        <h3>☁️ Cloud Native</h3>
-        <p>Deploy anywhere at scale.</p>
-      </div>
-    </div>
+  <div class="card">
+    <h3>🤖 AI & Analytics</h3>
+    <p>
+      Implement NLP, sentiment analysis, and predictive insights to turn raw data into actionable intelligence.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>🗺️ GIS & Mapping</h3>
+    <p>
+      Build map-based applications using Leaflet, PostGIS, and GeoAlchemy for land systems, tracking, and geospatial analytics.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>☁️ Cloud & Deployment</h3>
+    <p>
+      Deploy scalable applications using Docker, cloud services, and CI/CD pipelines for reliable production systems.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>📊 SaaS Product Development</h3>
+    <p>
+      Design and build full-stack products like CRM systems, dashboards, and IoT platforms from idea to deployment.
+    </p>
+  </div>
+
+</div>
   </div>
 </section>
 
-<!-- PRODUCT -->
-<section class="section">
+<!-- Product -->
+<!-- Product -->
+
+<section class="section product-section">
   <div class="container">
-    <h2>Flagship Product</h2>
+
+    <!-- HEADER -->
+    <div class="section-header">
+      <span class="badge">🚀 Product</span>
+
+      <h2 class="section-title">
+        Track Everything. Miss Nothing.
+      </h2>
+
+      <p class="section-subtitle">
+        JTL Track gives you real-time vehicle visibility, smart alerts, and powerful analytics — all in one intuitive dashboard.
+      </p>
+    </div>
 
     <div class="product">
-      <div class="product-box">
-        <h3>JTL SaaS Platform</h3>
-        <ul>
-          <li>Live dashboards</li>
-          <li>AI insights</li>
-          <li>Cloud sync</li>
+
+      <!-- LEFT -->
+      <div class="product-content">
+        <h3>🚗 JTL Track</h3>
+
+        <p>
+          A modern GPS tracking platform built for fleets, logistics, and IoT-driven systems.
+        </p>
+
+        <ul class="feature-list">
+          <li>📍 Live vehicle tracking</li>
+          <li>📊 Advanced analytics dashboard</li>
+          <li>🚨 Real-time alerts & geofencing</li>
+          <li>📡 Seamless IoT integration</li>
         </ul>
+
+        <a href="#contact" class="btn-primary">Request Demo</a>
       </div>
 
+      <!-- RIGHT -->
+      <div class="product-preview">
+  <div class="product-card">
+    <div class="card-glow"></div>
+
+    <div class="product-box">
+      <h4>Live GPS Preview</h4>
+
+      <div class="map-wrapper">
+        <div id="mapPreview"></div>
+
+        <div class="map-ui">
+          Vehicle: CAR-101<br>
+          Status: 🟢 Online<br>
+          Speed: <span id="speed">0</span> km/h
+        </div>
+
+        <!-- NEW -->
+        <div class="map-controls">⏯️ 🔍 📊</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+
+<!-- SECOND PRODUCT -->
+<div class="product reverse">
+
+  <!-- LEFT (UI PREVIEW) -->
+  <div class="product-preview">
+    <div class="product-card">
+      <div class="card-glow"></div>
+
       <div class="product-box">
-        <div style="height:160px;display:flex;align-items:center;justify-content:center;background:#f3f4f6;border-radius:12px;">
-          Dashboard Preview
+        <h4>Builder CRM Dashboard</h4>
+
+        <div class="crm-ui">
+
+          <div class="crm-top">
+            🏗️ Projects: 12 | 💰 Revenue: ₹8.2L
+          </div>
+
+          <div class="crm-grid">
+            <div class="crm-card">Leads<br><b>245</b></div>
+            <div class="crm-card">Sales<br><b>32</b></div>
+            <div class="crm-card">Pending<br><b>14</b></div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- PRICING -->
-<section class="pricing">
-  <h2>Pricing</h2>
+  <!-- RIGHT (CONTENT) -->
+  <div class="product-content">
+    <h3>🏢 JTL CRM</h3>
 
-  <div class="price-grid">
+    <p>
+      A complete CRM solution designed for builders and real estate teams to manage leads, projects, sales, and payments.
+    </p>
 
-    <div class="price-card">
-      <h3>Starter</h3>
-      <h1>$0</h1>
-      <ul>
-        <li>Basic API</li>
-        <li>Community support</li>
-      </ul>
-      <button>Get Started</button>
-    </div>
+    <ul class="feature-list">
+      <li>📋 Lead & customer management</li>
+      <li>🏗️ Project & site tracking</li>
+      <li>💰 Payment & invoice tracking</li>
+      <li>📊 Reports & analytics</li>
+    </ul>
 
-    <div class="price-card highlight">
-      <h3>Pro</h3>
-      <h1>$29</h1>
-      <ul>
-        <li>Everything in Starter</li>
-        <li>AI tools</li>
-        <li>Priority support</li>
-      </ul>
-      <button>Choose Pro</button>
-    </div>
-
-    <div class="price-card">
-      <h3>Enterprise</h3>
-      <h1>$99</h1>
-      <ul>
-        <li>Dedicated infra</li>
-        <li>SLA support</li>
-      </ul>
-      <button>Contact Sales</button>
-    </div>
-
+    <a href="#" class="btn-primary">Explore CRM</a>
   </div>
+
+</div>  
+  </div>
+  
+
 </section>
+
+
+
 
 <!-- CTA -->
 <section class="cta">
@@ -451,8 +819,78 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  © 2026 JenaTech Labs — Stripe PRO Clone
+  © 2026 JenaTech Labs 
 </footer>
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
+<script>
+// INIT MAP
+const map = L.map('mapPreview', {
+  zoomControl: false,
+  attributionControl: false
+}).setView([20.2961, 85.8245], 15);
+
+//L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+//L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png')
+//.addTo(map);
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  maxZoom: 19,
+  attribution: '&copy; OpenStreetMap & Carto'
+}).addTo(map);
+// CAR ICON
+const carIcon = L.icon({
+  iconUrl: "https://maps.gstatic.com/mapfiles/ms2/micons/cabs.png",
+  iconSize: [28, 28]
+});
+
+// VEHICLE
+let vehicle = { lat: 20.2961, lng: 85.8245 };
+
+// MARKER
+const marker = L.marker([vehicle.lat, vehicle.lng], { icon: carIcon }).addTo(map);
+
+// ROUTE
+let path = [[vehicle.lat, vehicle.lng]];
+const line = L.polyline(path, { color: "#635bff" }).addTo(map);
+
+// MOVE
+let angle = 0; // direction in radians
+
+setInterval(() => {
+  let oldLat = vehicle.lat;
+  let oldLng = vehicle.lng;
+
+  // slowly change direction
+  angle += (Math.random() - 0.5) * 0.3;
+
+  // move forward in that direction
+  let speedFactor = 0.0005;
+
+  vehicle.lat += Math.cos(angle) * speedFactor;
+  vehicle.lng += Math.sin(angle) * speedFactor;
+
+  // update marker
+  marker.setLatLng([vehicle.lat, vehicle.lng]);
+
+  // update route
+  path.push([vehicle.lat, vehicle.lng]);
+  if (path.length > 30) path.shift();
+  line.setLatLngs(path);
+
+  // calculate speed
+  let dist = Math.sqrt(
+    Math.pow(vehicle.lat - oldLat, 2) +
+    Math.pow(vehicle.lng - oldLng, 2)
+  );
+
+  let speed = dist * 100000;
+
+  document.getElementById("speed").innerText = speed.toFixed(1);
+
+}, 1500);
+
+</script>
 </body>
 </html>
