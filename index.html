@@ -735,27 +735,115 @@ body::after {
 /* ======================
    CTA
 ====================== */
+
 .cta {
-  background: #0a2540;
-  color: white;
-  padding: 100px 20px;
+  position: relative;
+  padding: 120px 20px;
   text-align: center;
-  margin-top: 80px;
+  overflow: hidden;
+
+  background: linear-gradient(120deg, #0a2540, #1e293b);
+  color: white;
+}
+
+/* 🔮 glowing background */
+.cta::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(99,91,255,0.4), transparent 70%);
+  top: -150px;
+  left: -150px;
+  filter: blur(100px);
+  animation: floatCTA 12s ease-in-out infinite alternate;
+}
+
+/* 🌊 second glow */
+.cta::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(34,211,238,0.35), transparent 70%);
+  bottom: -150px;
+  right: -150px;
+  filter: blur(100px);
+  animation: floatCTA 14s ease-in-out infinite alternate;
+}
+
+/* content */
+.cta h2 {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin-bottom: 10px;
+
+  background: linear-gradient(90deg, #ffffff, #c7d2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .cta p {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.75);
+  font-size: 18px;
+  margin-top: 10px;
 }
 
-.cta a {
-  margin-top: 20px;
-  display: inline-block;
-  padding: 12px 24px;
+/* animation */
+@keyframes floatCTA {
+  0% {
+    transform: translate(0,0) scale(1);
+  }
+  50% {
+    transform: translate(40px, 60px) scale(1.2);
+  }
+  100% {
+    transform: translate(-30px, -20px) scale(1);
+  }
+}
+.cta-actions {
+  margin-top: 25px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* button */
+.cta-btn {
+  padding: 12px 26px;
   background: white;
   color: #0a2540;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
+  transition: 0.25s;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* email style */
+.cta-email {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.cta-email:hover {
+  background: white;
+  color: #0a2540;
+  transform: translateY(-2px);
 }
 
 /* ======================
@@ -975,10 +1063,10 @@ footer {
 
     <!-- DESKTOP LINKS -->
     <div class="nav-links">
-      <a href="#products" class="active">Products</a>
-      <a href="#skills">Developers</a>
-      <a href="#contact">Contact</a>
-    </div>
+  <a href="#products"  onclick="setActive(this)">Products</a>
+  <a href="#skills" onclick="setActive(this)">Developers</a>
+  <a href="#contact" onclick="setActive(this)">Contact</a>
+</div>
 
     <div class="nav-actions">
       <a href="#" class="nav-login">Sign in</a>
@@ -1204,10 +1292,17 @@ footer {
 
 
 <!-- CTA -->
-<section class="cta">
+<section class="cta" id="contact">
   <h2>Start building with JenaTech Labs</h2>
   <p>From idea to scalable SaaS in weeks.</p>
-  <a href="#">Get started</a>
+
+  <div class="cta-actions">
+    <a href="#" class="cta-btn">Get Started</a>
+
+    <a href="mailto:info@jenatechlabs.com" class="cta-email">
+      info@jenatechlabs.com
+    </a>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -1215,6 +1310,17 @@ footer {
   © 2026 JenaTech Labs 
 </footer>
 <!-- Leaflet -->
+
+<script>
+function setActive(element) {
+  const links = document.querySelectorAll(".nav-links a, .mobile-menu a");
+
+  links.forEach(link => link.classList.remove("active"));
+
+  element.classList.add("active");
+}
+</script>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
