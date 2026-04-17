@@ -76,20 +76,16 @@ body::after {
 /* ======================
    NAVBAR
 ====================== */
-/* NAVBAR */
-/* ======================
-   NAV BASE
-====================== */
+
 .nav {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
 
-  background: rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.9);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0,0,0,0.04);
-
   transition: all 0.35s ease;
 }
 
@@ -255,40 +251,48 @@ body::after {
   overflow: hidden;
 }
 
+
 /* animated gradient background */
 .hero-bg {
   position: absolute;
   inset: 0;
   background: linear-gradient(120deg, #ffffff, #f8fafc, #f1f5f9);
-
   z-index: 0;
+  border-bottom: 1px solid #eef2f7;
 }
 
 /* moving gradient layer */
 .hero-bg::before {
   content: "";
   position: absolute;
-  inset: -50%;
+  width: 700px;
+  height: 700px;
+  top: -200px;
+  left: -200px;
 
   background: radial-gradient(circle at 30% 30%, rgba(99,91,255,0.35), transparent 60%),
               radial-gradient(circle at 70% 70%, rgba(34,211,238,0.35), transparent 60%);
 
   background-size: 200% 200%;
-
   animation: gradientShift 8s ease-in-out infinite;
 
-  z-index: 0;
+  filter: blur(100px);
 }
 
 .hero-bg::after {
   content: "";
   position: absolute;
-  inset: -50%;
+  width: 700px;
+  height: 700px;
+  bottom: -200px;
+  right: -200px;
 
   background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.5), transparent 70%);
   background-size: 200% 200%;
 
   animation: gradientShiftReverse 12s ease-in-out infinite;
+
+  filter: blur(100px);
 }
 
 @keyframes gradientShiftReverse {
@@ -1145,7 +1149,18 @@ footer {
     display: flex;
   }
 }
+.logo-box {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
 
+.nav-tagline {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+}
 </style>
 </head>
 
@@ -1157,7 +1172,10 @@ footer {
   <div class="nav-inner">
 
     
-    <h2 class="logo" aria-label="JenaTech Labs">JenaTechLabs</h2>
+    <div class="logo-box">
+  <h2 class="logo">JenaTechLabs</h2>
+  <span class="nav-tagline">Data • GPS • AI</span>
+</div>
 
     <!-- DESKTOP LINKS -->
     <div class="nav-links">
