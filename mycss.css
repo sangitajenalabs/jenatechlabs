@@ -1396,3 +1396,269 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* ======================
+   PRODUCT BADGES
+====================== */
+.product-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+
+  background: rgba(99,91,255,0.12);
+  color: #635bff;
+  border: 1px solid rgba(99,91,255,0.18);
+}
+
+.product-badge.secondary {
+  background: rgba(34,211,238,0.12);
+  color: #0891b2;
+  border: 1px solid rgba(34,211,238,0.18);
+}
+
+/* ======================
+   PRODUCT TAGLINE
+====================== */
+.product-tagline {
+  color: #635bff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: -6px;
+  margin-bottom: 14px;
+}
+
+/* ======================
+   TECH STACK
+====================== */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.tech-stack span {
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  background: rgba(99,91,255,0.08);
+  color: #4f46e5;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  border: 1px solid rgba(99,91,255,0.12);
+}
+
+/* ======================
+   PRODUCT ACTIONS
+====================== */
+.product-actions {
+  margin-top: 25px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ======================
+   PREVIEW HEADER
+====================== */
+.preview-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #0a2540;
+
+  margin-bottom: 18px;
+}
+
+/* LIVE DOT */
+.live-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+
+  box-shadow: 0 0 12px rgba(34,197,94,0.7);
+
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ======================
+   STATS GRID
+====================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.stat-card {
+  background: rgba(248,250,252,0.9);
+  border: 1px solid rgba(0,0,0,0.04);
+
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.stat-card span {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.stat-card h4 {
+  margin: 0;
+  font-size: 22px;
+  color: #0a2540;
+}
+
+/* ======================
+   USE CASES
+====================== */
+.usecase-section {
+  margin-top: 100px;
+}
+
+.usecase-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.usecase-card {
+  background: rgba(255,255,255,0.85);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 18px;
+  padding: 24px;
+
+  border: 1px solid rgba(0,0,0,0.05);
+
+  transition: 0.3s;
+}
+
+.usecase-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.usecase-icon {
+  font-size: 30px;
+  margin-bottom: 14px;
+}
+
+.usecase-card h4 {
+  margin-bottom: 10px;
+  color: #0a2540;
+}
+
+.usecase-card p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+/* ======================
+   RESPONSIVE IMPROVEMENTS
+====================== */
+
+@media(max-width: 1100px){
+
+  .usecase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media(max-width: 900px){
+
+  .product {
+    flex-direction: column;
+  }
+
+  .product.reverse {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media(max-width: 700px){
+
+  .grid,
+  .price-grid,
+  .usecase-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 130px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+    line-height: 1.1;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .product-box {
+    padding: 18px;
+  }
+
+  .cta h2 {
+    font-size: 30px;
+  }
+
+}
+
+
+
+
+
