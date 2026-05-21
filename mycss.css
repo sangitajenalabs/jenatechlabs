@@ -1835,7 +1835,183 @@ footer {
   }
 
 }
+/* =========================================
+   ARCHITECTURE SECTION
+========================================= */
 
+.architecture-section {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(180deg, #ffffff, #f8fafc);
+}
+
+/* background glow */
+.architecture-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  background:
+    radial-gradient(circle,
+    rgba(99,91,255,0.12),
+    transparent 70%);
+
+  top: -200px;
+  left: -200px;
+
+  filter: blur(80px);
+}
+
+/* ======================
+   PIPELINE
+====================== */
+
+.pipeline-wrapper {
+  margin-top: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.pipeline-card {
+  position: relative;
+
+  width: 200px;
+
+  padding: 28px 22px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.8);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(0,0,0,0.05);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.05);
+
+  transition: 0.35s;
+}
+
+.pipeline-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.10);
+}
+
+/* ICON */
+.pipeline-icon {
+  font-size: 38px;
+  margin-bottom: 14px;
+}
+
+/* TITLE */
+.pipeline-card h4 {
+  margin-bottom: 10px;
+
+  color: #0a2540;
+
+  font-size: 18px;
+}
+
+/* TEXT */
+.pipeline-card p {
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* CONNECTOR LINE */
+.pipeline-line {
+  width: 50px;
+  height: 3px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(90deg,
+    #635bff,
+    #22d3ee);
+}
+
+/* ======================
+   STACK TAGS
+====================== */
+
+.architecture-stack {
+  margin-top: 50px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+.architecture-stack span {
+  padding: 10px 16px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(99,91,255,0.08);
+
+  border:
+    1px solid rgba(99,91,255,0.12);
+
+  color: #4f46e5;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.architecture-stack span:hover {
+  transform: translateY(-3px);
+
+  background:
+    rgba(99,91,255,0.14);
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+
+@media(max-width: 1100px){
+
+  .pipeline-wrapper {
+    gap: 30px;
+  }
+
+  .pipeline-line {
+    display: none;
+  }
+
+}
+
+@media(max-width: 700px){
+
+  .pipeline-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+}
 
 
 
