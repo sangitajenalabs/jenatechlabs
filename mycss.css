@@ -213,33 +213,7 @@ body::after {
    LOGO
 ========================================= */
 
-.logo-box {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
 
-.logo {
-
-  margin: 0;
-
-  font-size: 22px;
-
-  font-weight: 700;
-
-  letter-spacing: -0.5px;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--dark),
-      var(--primary),
-      var(--secondary)
-    );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .logo-box{
   display:flex;
   align-items:center;
