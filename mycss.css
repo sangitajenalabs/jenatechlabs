@@ -366,7 +366,7 @@ body::after {
   position: relative;
 
   padding:
-    140px 20px 100px;
+    40px 20px 100px;
 
   overflow: hidden;
 
@@ -1349,7 +1349,7 @@ footer {
 
   .hero {
 
-    padding-top: 120px;
+    padding-top: 30px;
   }
 
   .hero h1 {
