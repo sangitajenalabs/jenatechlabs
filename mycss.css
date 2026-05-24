@@ -224,7 +224,7 @@ body::after {
   width:140px;
   height:auto;
   object-fit:contain;
-  margin-bottom:-4px; /* pulls tagline slightly upward */
+  margin-bottom:-0px; /* pulls tagline slightly upward */
 }
 
 .nav-tagline{
