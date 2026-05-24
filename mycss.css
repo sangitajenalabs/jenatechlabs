@@ -240,7 +240,17 @@ body::after {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.logo-box{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 
+.logo-img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+}
 .nav-tagline {
 
   font-size: 11px;
