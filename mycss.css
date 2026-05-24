@@ -216,20 +216,21 @@ body::after {
 
 .logo-box{
   display:flex;
-  align-items:center;
-  gap:12px;
+  flex-direction:column;
+  align-items:flex-start;
 }
 
 .logo-img{
-  width:140px;   /* adjust as needed */
+  width:140px;
   height:auto;
   object-fit:contain;
+  margin-bottom:-4px; /* pulls tagline slightly upward */
 }
 
 .nav-tagline{
   font-size:12px;
   color:#aaa;
-  white-space:nowrap;
+  margin-left:8px; /* moves text slightly under logo */
 }
 
 /* =========================================
