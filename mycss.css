@@ -431,16 +431,20 @@ body::after {
   font-weight: 700;
   margin-bottom: 28px;
   
-  /* Beautifully blends your deep enterprise navy text into your bright aqua brand color */
+  /* THREE-COLOR PREMIUM TECH GRADIENT: Blends Navy -> Deep Teal -> Bright Aqua */
   background:
     linear-gradient(
-      90deg,
-      var(--dark),
-      var(--primary)
+      135deg,
+      var(--dark) 20%,
+      var(--secondary) 65%,
+      var(--primary) 100%
     );
+  
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text; /* Modern fallback */
 }
+
 
 .hero-description {
   max-width: 760px;
