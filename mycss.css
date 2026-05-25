@@ -211,6 +211,7 @@ body::after {
 
 .logo-img {
   height: 58px;
+  width: 230; 
   width: auto;
   object-fit: contain;
 }
