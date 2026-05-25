@@ -54,7 +54,6 @@ html {
 }
 
 body {
-
   margin: 0;
   font-family: 'Inter', sans-serif;
   background: var(--bg);
@@ -148,7 +147,6 @@ body::after {
 /* =========================================
    NAVBAR
 ========================================= */
-
 .nav {
   position: fixed;
   top: 0;
@@ -178,7 +176,6 @@ body::after {
 }
 
 .nav-inner {
-
   max-width: 1280px;
   margin: auto;
   height: 82px;
@@ -223,9 +220,7 @@ body::after {
 ========================================= */
 
 .nav-links {
-
   display: flex;
-
   gap: 30px;
 }
 .nav-links a {
@@ -241,29 +236,29 @@ body::after {
 .nav-links a:hover {
   color: #00b7ff;
 }
-.nav-links a.active::after {
+/* BASE UNDERLINE */
+.nav-links a::after {
 
   content: "";
   position: absolute;
   left: 50%;
   bottom: -8px;
-
-  transform:
-    translateX(-50%) scaleX(1);
-
   width: 70%;
   height: 3px;
-
   border-radius: 999px;
-
   background:
     linear-gradient(
       90deg,
       #00b7ff,
       #00e0ff
     );
-}
 
+  transform:
+    translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition:
+    transform 0.3s ease;
+}
 .nav-links a:hover,
 .nav-links a.active {
 
@@ -282,6 +277,8 @@ body::after {
   border-radius: 999px;
   transition:
     all 0.3s ease; 
+  transform:
+    translateX(-50%) scaleX(1); 
   background:
     linear-gradient(
       90deg,
