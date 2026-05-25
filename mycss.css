@@ -215,21 +215,26 @@ body::after {
   font-size:11px;
   color:#64748b;
 }
+
+/* ========================================= NAV LINKS ========================================= */ 
+.nav-links { display: flex; gap: 30px; } 
+.nav-links a { position: relative; 
+              display: inline-block; 
+              color: #334155; 
+              text-decoration: none; 
+              font-weight: 500; transition: color 0.3s ease;
+             } 
+.nav-links a:hover { color: #00b7ff; }
+
 /* BASE UNDERLINE */
 .nav-links a::after {
-
   content: "";
-
   position: absolute;
-
   left: 50%;
   bottom: -8px;
-
   width: 70%;
   height: 3px;
-
   border-radius: 999px;
-
   background:
     linear-gradient(
       90deg,
@@ -239,9 +244,7 @@ body::after {
 
   transform:
     translateX(-50%) scaleX(0);
-
   transform-origin: center;
-
   transition:
     transform 0.3s ease;
 }
