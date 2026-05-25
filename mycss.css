@@ -653,74 +653,183 @@ body::after {
 ========================================= */
 
 /* =========================================
-   BUTTONS
+   PRIMARY BUTTON
 ========================================= */
 
 .btn-primary {
-  padding: 13px 28px;
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 30px;
+
   border-radius: 999px;
 
-  /* Reversed: Starts with Deep Teal on the left so white text is perfectly readable */
   background:
     linear-gradient(
-      90deg,
-      var(--secondary),
-      var(--primary)
+      135deg,
+      #0f6c8d 0%,
+      #00c2ff 100%
     );
 
-  color: white; /* Kept text white as requested */
-  text-decoration: none;
-  font-weight: 600;
+  color: #ffffff;
 
-  /* Color-matched: Translucent Deep Teal shadow instead of purple */
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: 15px;
+
+  letter-spacing: 0.2px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+
   box-shadow:
-    0 10px 25px rgba(20, 139, 174, 0.3);
+    0 10px 30px rgba(0, 180, 255, 0.22),
+    inset 0 1px 0 rgba(255,255,255,0.15);
 
   transition:
-    var(--transition);
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+
+  overflow: hidden;
 }
 
-.btn-primary:hover {
-  transform:
-    translateY(-3px);
+/* subtle shine */
+.btn-primary::before {
 
-  /* Hover effect amplifies the Deep Teal glow */
-  box-shadow:
-    0 20px 40px rgba(20, 139, 174, 0.45);
-}
+  content: "";
 
-.btn-secondary {
-  padding: 13px 28px;
-  border-radius: 999px;
+  position: absolute;
 
-  /* Translucent Deep Teal border */
-  border:
-    1px solid rgba(20, 139, 174, 0.25);
+  inset: 0;
 
   background:
-    rgba(255,255,255,0.65);
+    linear-gradient(
+      120deg,
+      rgba(255,255,255,0.18),
+      transparent 40%
+    );
+
+  opacity: 0.8;
+}
+
+/* hover */
+.btn-primary:hover {
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 18px 45px rgba(0, 180, 255, 0.35),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b5f7d 0%,
+      #00b7ff 100%
+    );
+}
+
+/* click */
+.btn-primary:active {
+
+  transform:
+    translateY(-1px);
+}
+
+/* =========================================
+   SECONDARY BUTTON
+========================================= */
+
+.btn-secondary {
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 30px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid rgba(20, 139, 174, 0.18);
+
+  background:
+    rgba(255,255,255,0.72);
 
   backdrop-filter:
-    blur(10px);
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
 
   text-decoration: none;
 
-  /* Uses Deep Teal so the text is dark enough to read on a light background */
-  color: var(--secondary);
+  color:
+    #0f3c5f;
 
   font-weight: 600;
+  font-size: 15px;
+
+  letter-spacing: 0.2px;
+
+  box-shadow:
+    0 6px 20px rgba(15, 60, 95, 0.06),
+    inset 0 1px 0 rgba(255,255,255,0.7);
 
   transition:
-    var(--transition);
+    transform 0.35s ease,
+    background 0.35s ease,
+    border 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
+/* hover */
 .btn-secondary:hover {
+
   transform:
     translateY(-3px);
-    
-  /* Injects a soft tint of your Ice Blue color space on hover */
-  background: rgba(210, 239, 242, 0.25);
-  color: var(--dark);
+
+  background:
+    rgba(255,255,255,0.92);
+
+  border:
+    1px solid rgba(0, 183, 255, 0.28);
+
+  box-shadow:
+    0 14px 35px rgba(0, 160, 255, 0.12);
+
+  color:
+    #0b2d45;
+}
+
+/* click */
+.btn-secondary:active {
+
+  transform:
+    translateY(-1px);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .btn-primary,
+  .btn-secondary {
+
+    width: 100%;
+
+    max-width: 320px;
+  }
 }
 
 
