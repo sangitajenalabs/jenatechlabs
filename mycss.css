@@ -215,37 +215,21 @@ body::after {
   font-size:11px;
   color:#64748b;
 }
-/* =========================================
-   NAV LINKS
-========================================= */
-
-.nav-links {
-  display: flex;
-  gap: 30px;
-}
-.nav-links a {
-  position: relative;
-  display: inline-block; 
-  color: #334155;
-  text-decoration: none;
-  font-weight: 500;
-  transition:
-    color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #00b7ff;
-}
 /* BASE UNDERLINE */
 .nav-links a::after {
 
   content: "";
+
   position: absolute;
+
   left: 50%;
   bottom: -8px;
+
   width: 70%;
   height: 3px;
+
   border-radius: 999px;
+
   background:
     linear-gradient(
       90deg,
@@ -255,36 +239,26 @@ body::after {
 
   transform:
     translateX(-50%) scaleX(0);
+
   transform-origin: center;
+
   transition:
     transform 0.3s ease;
 }
+
+/* HOVER + ACTIVE TEXT */
 .nav-links a:hover,
 .nav-links a.active {
- transform:
-    translateX(-50%) scaleX(1);
+
   color: var(--dark);
 }
 
+/* HOVER + ACTIVE UNDERLINE */
 .nav-links a:hover::after,
 .nav-links a.active::after {
 
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 100%;
-  height: 3px;
-  border-radius: 999px;
-  transition:
-    all 0.3s ease; 
-  
-  background:
-    linear-gradient(
-      90deg,
-      #00b7ff,
-      #00e0ff
-    );
+  transform:
+    translateX(-50%) scaleX(1);
 }
 /* =========================================
    NAV ACTIONS
