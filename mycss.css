@@ -208,7 +208,7 @@ body::after {
 
 .logo-img {
   height: auto;
-  width: 230; 
+  width: 230px; 
   object-fit: contain;
 }
 .logo-title{
