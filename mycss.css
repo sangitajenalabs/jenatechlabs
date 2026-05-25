@@ -254,14 +254,15 @@ body::after {
     );
 
   transform:
-    translateX(-50%) scaleX(0);
+    translateX(-50%) scaleX(1);
   transform-origin: center;
   transition:
     transform 0.3s ease;
 }
 .nav-links a:hover,
 .nav-links a.active {
-
+ transform:
+    translateX(-50%) scaleX(1);
   color: var(--dark);
 }
 
