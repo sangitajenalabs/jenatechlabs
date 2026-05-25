@@ -226,7 +226,7 @@ body::after {
   flex-direction:column;
 }
 .logo-img{
-  width:240px;
+  width:300px;
   height:auto;
   object-fit:contain;
   margin-bottom:-0px; /* pulls tagline slightly upward */
