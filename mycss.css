@@ -2095,8 +2095,13 @@ body{
 
 @media (max-width:480px){
 
-  .logo-img{
-    width:190px;
+ .logo-img {
+    width: 230px;
+    height: auto;
+    
+    /* Ensures centering remains locked on small viewports */
+    margin: 0 auto;
+    align-self: center;
   }
 
   .nav-links{
