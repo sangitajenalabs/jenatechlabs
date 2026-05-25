@@ -558,6 +558,21 @@ body::after {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.hero-title span {
+
+  background:
+    linear-gradient(
+      135deg,
+      #00b7ff,
+      #00e0ff
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 20px rgba(0,183,255,0.18);
+}
 
 /* =========================================
    HERO DESCRIPTION
