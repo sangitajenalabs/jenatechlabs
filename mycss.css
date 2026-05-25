@@ -620,7 +620,7 @@ body::after {
 
     font-size:
       clamp(42px, 12vw, 62px);
-    line-height: 1.05;
+    line-height: 1.09;
     letter-spacing: -2px;
     padding-top: 10px;
   }
