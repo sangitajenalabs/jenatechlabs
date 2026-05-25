@@ -150,7 +150,6 @@ body::after {
 ========================================= */
 
 .nav {
-
   position: fixed;
   top: 0;
   width: 100%;
@@ -193,8 +192,6 @@ body::after {
 /* =========================================
    LOGO
 ========================================= */
-
-
 .logo-box{
   display:flex;
   align-items:center;
@@ -231,9 +228,6 @@ body::after {
 
   gap: 30px;
 }
-
-
-
 .nav-links a {
   position: relative;
   display: inline-block; 
@@ -250,14 +244,12 @@ body::after {
 .nav-links a.active::after {
 
   content: "";
-
   position: absolute;
-
   left: 50%;
   bottom: -8px;
 
   transform:
-    translateX(-50%);
+    translateX(-50%) scaleX(1);
 
   width: 70%;
   height: 3px;
