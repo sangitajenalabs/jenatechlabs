@@ -367,107 +367,284 @@ body::after {
     0 20px 40px rgba(99,91,255,0.4);
 }
 
+
 /* =========================================
-   HERO
+   HERO SECTION
 ========================================= */
 
 .hero {
   position: relative;
-  padding: 40px 20px 100px;
+  padding: 90px 20px 120px;
   overflow: hidden;
   text-align: center;
+  background: #ffffff;
 }
 
-/* background */
+/* =========================================
+   BACKGROUND LAYER
+========================================= */
+
 .hero-bg {
   position: absolute;
   inset: 0;
+
   background:
+
+    /* top-left glow */
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(0, 220, 255, 0.12),
+      transparent 32%
+    ),
+
+    /* top-right glow */
+    radial-gradient(
+      circle at 100% 10%,
+      rgba(0, 160, 255, 0.10),
+      transparent 30%
+    ),
+
+    /* bottom soft glow */
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(0, 180, 255, 0.08),
+      transparent 40%
+    ),
+
+    /* main background */
     linear-gradient(
-      120deg,
-      #ffffff,
-      #f8fafc,
-      #f1f5f9
+      135deg,
+      #ffffff 0%,
+      #f7fbff 35%,
+      #eef6fb 100%
     );
+
   z-index: 0;
 }
 
-/* glow — Color-matched to your dynamic Aqua & Teal profile */
+/* =========================================
+   LARGE CINEMATIC LEFT GLOW
+========================================= */
+
 .hero-bg::before {
   content: "";
+
   position: absolute;
-  width: 700px;
-  height: 700px;
-  top: -200px;
-  left: -200px;
+
+  width: 950px;
+  height: 950px;
+
+  top: -350px;
+  left: -260px;
+
   background:
     radial-gradient(
-      circle at 30% 30%,
-      rgba(17, 213, 236, 0.25), /* Bright Aqua Core */
-      transparent 60%
-    ),
-    radial-gradient(
-      circle at 70% 70%,
-      rgba(20, 139, 174, 0.20), /* Deep Teal Core */
-      transparent 60%
+      circle,
+      rgba(0, 220, 255, 0.22) 0%,
+      rgba(0, 180, 255, 0.12) 28%,
+      transparent 68%
     );
-  filter: blur(100px);
+
+  filter: blur(120px);
+
   animation:
-    gradientShift 8s ease-in-out infinite;
+    heroFloat 10s ease-in-out infinite alternate;
 }
+
+/* =========================================
+   RIGHT SIDE GLOW
+========================================= */
+
+.hero-bg::after {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  right: -220px;
+  bottom: -260px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 140, 255, 0.16) 0%,
+      rgba(0, 210, 255, 0.08) 35%,
+      transparent 72%
+    );
+
+  filter: blur(120px);
+
+  animation:
+    heroFloat2 14s ease-in-out infinite alternate;
+}
+
+/* =========================================
+   FLOAT ANIMATIONS
+========================================= */
+
+@keyframes heroFloat {
+
+  from {
+    transform:
+      translateY(0px)
+      translateX(0px);
+  }
+
+  to {
+    transform:
+      translateY(30px)
+      translateX(20px);
+  }
+}
+
+@keyframes heroFloat2 {
+
+  from {
+    transform:
+      translateY(0px)
+      translateX(0px);
+  }
+
+  to {
+    transform:
+      translateY(-20px)
+      translateX(-30px);
+  }
+}
+
+/* =========================================
+   HERO CONTENT
+========================================= */
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 920px;
+
+  max-width: 980px;
   margin: auto;
 }
 
+/* =========================================
+   HERO TITLE
+========================================= */
+
 .hero h1 {
+
   font-size:
-    clamp(42px, 8vw, 72px);
-  line-height: 1.02;
-  letter-spacing: -3px;
-  font-weight: 700;
-  margin-bottom: 28px;
-  
-  /* THREE-COLOR PREMIUM TECH GRADIENT: Blends Navy -> Deep Teal -> Bright Aqua */
+    clamp(52px, 8vw, 82px);
+
+  line-height: 0.96;
+
+  letter-spacing: -4px;
+
+  font-weight: 800;
+
+  margin:
+    0 auto 32px;
+
+  max-width: 980px;
+
   background:
     linear-gradient(
       135deg,
-      var(--dark) 20%,
-      var(--secondary) 65%,
-      var(--primary) 100%
+      #0f172a 10%,
+      #134e6f 45%,
+      #00b7ff 100%
     );
-  
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text; /* Modern fallback */
+  background-clip: text;
 }
 
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
 
 .hero-description {
+
   max-width: 760px;
-  margin: auto;
+
+  margin:
+    0 auto;
+
   font-size: 20px;
-  line-height: 1.7;
-  color: var(--muted);
+
+  line-height: 1.8;
+
+  color: #5b6475;
 }
 
+/* =========================================
+   BUTTON AREA
+========================================= */
+
 .hero-buttons {
-  margin-top: 40px;
+
+  margin-top: 44px;
+
   display: flex;
+
   justify-content: center;
-  gap: 16px;
+
+  gap: 18px;
+
   flex-wrap: wrap;
 }
+
+/* =========================================
+   NETWORK CANVAS
+========================================= */
 
 #network {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
+  opacity: 0.55;
 }
 
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding:
+      70px 20px 90px;
+  }
+
+  .hero h1 {
+
+    line-height: 1.02;
+
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+  }
+
+  .hero-bg::before {
+
+    width: 700px;
+    height: 700px;
+
+    top: -250px;
+    left: -260px;
+  }
+
+  .hero-bg::after {
+
+    width: 500px;
+    height: 500px;
+  }
+}
 
 /* =========================================
    BUTTONS
