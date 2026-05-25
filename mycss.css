@@ -225,7 +225,12 @@ body::after {
   display:flex;
   flex-direction:column;
 }
-
+.logo-img{
+  width:140px;
+  height:auto;
+  object-fit:contain;
+  margin-bottom:-0px; /* pulls tagline slightly upward */
+}
 .logo-title{
   font-size:20px;
   font-weight:700;
