@@ -506,26 +506,29 @@ body::after {
    BUTTONS
 ========================================= */
 
+/* =========================================
+   BUTTONS
+========================================= */
+
 .btn-primary {
   padding: 13px 28px;
   border-radius: 999px;
 
-  /* Gradient flows smoothly from Bright Aqua to Deep Teal */
+  /* Reversed: Starts with Deep Teal on the left so white text is perfectly readable */
   background:
     linear-gradient(
       90deg,
-      var(--primary),
-      var(--secondary)
+      var(--secondary),
+      var(--primary)
     );
 
-  /* Changed to dark text so it remains highly legible on the bright aqua background */
-  color: var(--dark);
+  color: white; /* Kept text white as requested */
   text-decoration: none;
-  font-weight: 700; /* Increased font weight for maximum accessibility reading */
+  font-weight: 600;
 
   /* Color-matched: Translucent Deep Teal shadow instead of purple */
   box-shadow:
-    0 10px 25px rgba(20, 139, 174, 0.25);
+    0 10px 25px rgba(20, 139, 174, 0.3);
 
   transition:
     var(--transition);
@@ -535,16 +538,16 @@ body::after {
   transform:
     translateY(-3px);
 
-  /* Amplified branding hover glow using your Deep Teal signature */
+  /* Hover effect amplifies the Deep Teal glow */
   box-shadow:
-    0 20px 40px rgba(20, 139, 174, 0.38);
+    0 20px 40px rgba(20, 139, 174, 0.45);
 }
 
 .btn-secondary {
   padding: 13px 28px;
   border-radius: 999px;
 
-  /* Replaced purple border tint with a translucent Deep Teal border */
+  /* Translucent Deep Teal border */
   border:
     1px solid rgba(20, 139, 174, 0.25);
 
@@ -556,7 +559,7 @@ body::after {
 
   text-decoration: none;
 
-  /* Changed from var(--primary) to var(--secondary) so text is dark enough to read on white */
+  /* Uses Deep Teal so the text is dark enough to read on a light background */
   color: var(--secondary);
 
   font-weight: 600;
@@ -573,6 +576,7 @@ body::after {
   background: rgba(210, 239, 242, 0.25);
   color: var(--dark);
 }
+
 
 /* =========================================
    SECTIONS
