@@ -277,8 +277,7 @@ body::after {
   border-radius: 999px;
   transition:
     all 0.3s ease; 
-  transform:
-    translateX(-50%) scaleX(1); 
+  
   background:
     linear-gradient(
       90deg,
