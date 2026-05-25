@@ -613,14 +613,16 @@ body::after {
 
   .hero {
     padding:
-      70px 20px 90px;
+      110px 20px 90px;
   }
 
   .hero h1 {
 
-    line-height: 1.02;
-
+    font-size:
+      clamp(42px, 12vw, 62px);
+    line-height: 1.05;
     letter-spacing: -2px;
+    padding-top: 10px;
   }
 
   .hero-description {
