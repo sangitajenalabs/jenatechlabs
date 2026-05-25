@@ -372,24 +372,16 @@ body::after {
 ========================================= */
 
 .hero {
-
   position: relative;
-
-  padding:
-    40px 20px 100px;
-
+  padding: 40px 20px 100px;
   overflow: hidden;
-
   text-align: center;
 }
 
 /* background */
 .hero-bg {
-
   position: absolute;
-
   inset: 0;
-
   background:
     linear-gradient(
       120deg,
@@ -397,110 +389,81 @@ body::after {
       #f8fafc,
       #f1f5f9
     );
-
   z-index: 0;
 }
 
-/* glow */
+/* glow — Color-matched to your dynamic Aqua & Teal profile */
 .hero-bg::before {
-
   content: "";
-
   position: absolute;
-
   width: 700px;
   height: 700px;
-
   top: -200px;
   left: -200px;
-
   background:
     radial-gradient(
       circle at 30% 30%,
-      rgba(99,91,255,0.35),
+      rgba(17, 213, 236, 0.25), /* Bright Aqua Core */
       transparent 60%
     ),
     radial-gradient(
       circle at 70% 70%,
-      rgba(34,211,238,0.35),
+      rgba(20, 139, 174, 0.20), /* Deep Teal Core */
       transparent 60%
     );
-
   filter: blur(100px);
-
   animation:
     gradientShift 8s ease-in-out infinite;
 }
 
 .hero-content {
-
   position: relative;
-
   z-index: 2;
-
   max-width: 920px;
-
   margin: auto;
 }
 
 .hero h1 {
-
   font-size:
     clamp(42px, 8vw, 72px);
-
   line-height: 1.02;
-
   letter-spacing: -3px;
-
   font-weight: 700;
-
   margin-bottom: 28px;
-
+  
+  /* Beautifully blends your deep enterprise navy text into your bright aqua brand color */
   background:
     linear-gradient(
       90deg,
       var(--dark),
       var(--primary)
     );
-
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-description {
-
   max-width: 760px;
-
   margin: auto;
-
   font-size: 20px;
-
   line-height: 1.7;
-
   color: var(--muted);
 }
 
 .hero-buttons {
-
   margin-top: 40px;
-
   display: flex;
-
   justify-content: center;
-
   gap: 16px;
-
   flex-wrap: wrap;
 }
 
 #network {
-
   position: absolute;
-
   inset: 0;
-
   z-index: 0;
 }
+
 
 /* =========================================
    BUTTONS
