@@ -254,7 +254,7 @@ body::after {
     );
 
   transform:
-    translateX(-50%) scaleX(1);
+    translateX(-50%) scaleX(0);
   transform-origin: center;
   transition:
     transform 0.3s ease;
