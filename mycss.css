@@ -507,11 +507,10 @@ body::after {
 ========================================= */
 
 .btn-primary {
-
   padding: 13px 28px;
-
   border-radius: 999px;
 
+  /* Gradient flows smoothly from Bright Aqua to Deep Teal */
   background:
     linear-gradient(
       90deg,
@@ -519,36 +518,35 @@ body::after {
       var(--secondary)
     );
 
-  color: white;
-
+  /* Changed to dark text so it remains highly legible on the bright aqua background */
+  color: var(--dark);
   text-decoration: none;
+  font-weight: 700; /* Increased font weight for maximum accessibility reading */
 
-  font-weight: 600;
-
+  /* Color-matched: Translucent Deep Teal shadow instead of purple */
   box-shadow:
-    0 10px 25px rgba(99,91,255,0.25);
+    0 10px 25px rgba(20, 139, 174, 0.25);
 
   transition:
     var(--transition);
 }
 
 .btn-primary:hover {
-
   transform:
     translateY(-3px);
 
+  /* Amplified branding hover glow using your Deep Teal signature */
   box-shadow:
-    0 20px 40px rgba(99,91,255,0.35);
+    0 20px 40px rgba(20, 139, 174, 0.38);
 }
 
 .btn-secondary {
-
   padding: 13px 28px;
-
   border-radius: 999px;
 
+  /* Replaced purple border tint with a translucent Deep Teal border */
   border:
-    1px solid rgba(99,91,255,0.2);
+    1px solid rgba(20, 139, 174, 0.25);
 
   background:
     rgba(255,255,255,0.65);
@@ -558,7 +556,8 @@ body::after {
 
   text-decoration: none;
 
-  color: var(--primary);
+  /* Changed from var(--primary) to var(--secondary) so text is dark enough to read on white */
+  color: var(--secondary);
 
   font-weight: 600;
 
@@ -567,9 +566,12 @@ body::after {
 }
 
 .btn-secondary:hover {
-
   transform:
     translateY(-3px);
+    
+  /* Injects a soft tint of your Ice Blue color space on hover */
+  background: rgba(210, 239, 242, 0.25);
+  color: var(--dark);
 }
 
 /* =========================================
