@@ -270,23 +270,17 @@ body::after {
 .nav-actions {
 
   display: flex;
-
   align-items: center;
-
   gap: 18px;
 }
 
 .nav-login {
-
   text-decoration: none;
-
   color: var(--text);
-
   font-weight: 500;
 }
 
 .nav-cta {
-
   position: relative;
   padding: 11px 20px;
   border-radius: 999px;
@@ -372,12 +366,9 @@ body::after {
 .hero-bg::before {
 
   content: "";
-
   position: absolute;
-
   width: 700px;
   height: 700px;
-
   top: -260px;
   left: -180px;
   background:
@@ -387,7 +378,6 @@ body::after {
       rgba(0, 180, 255, 0.06) 32%,
       transparent 70%
     );
-
   filter: blur(90px);
   opacity: 0.7;
 
@@ -460,7 +450,6 @@ body::after {
 ========================================= */
 
 .hero-content {
-
   position: relative;
   z-index: 2;
   max-width: 980px;
@@ -581,12 +570,10 @@ body::after {
 
   color: #ffffff;
   text-decoration: none;
-
   font-size: 15px;
   font-weight: 600;
   border: none;
-  box-shadow:
-    0 8px 20px rgba(8,145,178,0.14);
+  box-shadow:0 8px 20px rgba(8,145,178,0.14);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -651,7 +638,6 @@ body::after {
 ========================================= */
 
 #network {
-
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -707,12 +693,7 @@ body::after {
   letter-spacing: -1.5px;
   margin-bottom: 16px;
   background:
-    linear-gradient(
-      90deg,
-      var(--dark),
-      var(--primary)
-    );
-
+    linear-gradient(90deg,var(--dark),var(--primary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -731,9 +712,7 @@ body::after {
   font-size: 15px;
   font-weight: 600;
   color: var(--primary);
-  background:
-    rgba(99,91,255,0.08);
-
+  background:rgba(99,91,255,0.08);
   padding: 8px 16px;
   border-radius: 999px;
 }
@@ -754,28 +733,40 @@ body::after {
     repeat(3,1fr);
   margin-top: 50px;
 }
+
+
 /* =========================================
    CARDS
 ========================================= */
+
 .card {
+
   position: relative;
   background:
-    rgba(255,255,255,0.82);
+    rgba(255,255,255,0.92);
   backdrop-filter:
-    blur(14px);
+    blur(6px);
+  -webkit-backdrop-filter:
+    blur(6px);
   border:
-    1px solid rgba(255,255,255,0.35);
+    1px solid rgba(15,23,42,0.06);
   border-radius:
-    var(--radius-md);
-  padding: 26px;
+    22px;
+  padding: 32px;
   text-align: left;
   overflow: hidden;
-
   transition:
-    var(--transition);
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.25s ease;
+
   box-shadow:
-    var(--shadow-sm);
+    0 10px 30px rgba(15,23,42,0.04);
 }
+
+/* =========================================
+   TOP ACCENT LINE
+========================================= */
 
 .card::before {
   content: "";
@@ -783,33 +774,71 @@ body::after {
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
-
+  height: 3px;
   background:
     linear-gradient(
       90deg,
-      var(--primary),
-      var(--secondary)
+      #0891b2,
+      #06b6d4
     );
+
+  opacity: 0.9;
 }
+
+/* =========================================
+   HOVER
+========================================= */
 
 .card:hover {
 
   transform:
-    translateY(-8px);
+    translateY(-4px);
+  border:
+    1px solid rgba(8,145,178,0.12);
   box-shadow:
-    0 30px 60px rgba(0,0,0,0.10);
+    0 18px 40px rgba(15,23,42,0.06);
 }
+
+/* =========================================
+   CARD TITLE
+========================================= */
 
 .card h3 {
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-.card p {
 
-  color: var(--text);
-  line-height: 1.7;
-  font-size: 14px;
+  font-size: 21px;
+  line-height: 1.35;
+  margin-bottom: 16px;
+  color:
+    #0f172a;
+  font-weight: 700;
+}
+
+/* =========================================
+   CARD DESCRIPTION
+========================================= */
+
+.card p {
+  color:#5b6475;
+  line-height: 1.75;
+  font-size: 15px;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .card {
+    padding: 26px;
+  }
+  .card h3 {
+    font-size: 19px;
+  }
+  .card p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
 }
 
 /* =========================================
