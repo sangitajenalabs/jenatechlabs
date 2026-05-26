@@ -489,16 +489,13 @@ body::after {
 
 .hero-title {
 
-  font-size:
-    clamp(52px, 8vw, 82px);
-
-  line-height: 0.96;
-  letter-spacing: -4px;
-  font-weight: 800;
-  margin:
-    10px auto 32px;
-  max-width: 980px;
-  background:
+font-size: clamp(48px, 7vw, 72px);
+line-height: 1.02;
+letter-spacing: -2px;
+font-weight: 800;
+margin:10px auto 32px;
+max-width: 980px;
+background:
     linear-gradient(
       135deg,
       #0f172a 10%,
