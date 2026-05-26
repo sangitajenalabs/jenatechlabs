@@ -1390,15 +1390,16 @@ footer {
   border: 1px solid rgba(34,211,238,0.18);
 }
 
-/* ======================
+/* =========================================
    PRODUCT TAGLINE
-====================== */
+========================================= */
 .product-tagline {
-  color: #635bff;
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: -6px;
-  margin-bottom: 14px;
+  color:#0891b2;
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:0.2px;
+  margin-top:-4px;
+  margin-bottom:16px;
 }
 
 /* ======================
@@ -1407,18 +1408,30 @@ footer {
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 22px 0;
+  gap: 12px;
+  margin:26px 0;
 }
 
 .tech-stack span {
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(99,91,255,0.08);
-  color: #4f46e5;
-  font-size: 13px;
-  font-weight: 600;
-  border: 1px solid rgba(99,91,255,0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding:9px 16px;
+  border-radius:999px;
+  background:rgba(8,145,178,0.06);
+  border:1px solid rgba(8,145,178,0.10);
+  color:#0f766e;
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:0.2px;
+  transition:background 0.25s ease,border 0.25s ease,transform 0.25s ease;
+}
+
+/* hover */
+.tech-stack span:hover {
+  background:rgba(8,145,178,0.10);
+  border:1px solid rgba(8,145,178,0.16);
+  transform:translateY(-1px);
 }
 
 /* ======================
