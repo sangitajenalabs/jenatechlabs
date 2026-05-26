@@ -589,9 +589,9 @@ body::after {
   .hero-title {
 
     font-size:
-      clamp(32px, 9vw, 46px);
+      clamp(30px, 9vw, 46px);
 
-    line-height: 1.08;
+    line-height: 1.01;
 
     letter-spacing: -1px;
 
