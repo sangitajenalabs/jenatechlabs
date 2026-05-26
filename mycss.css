@@ -1704,7 +1704,10 @@ footer {
   gap: 24px;
 }
 
-/* connector line */
+/* =========================================
+   CONNECTOR LINE
+========================================= */
+
 .pipeline-line {
 
   width: 54px;
@@ -1729,6 +1732,7 @@ footer {
 .pipeline-card {
 
   width: 220px;
+  min-height: 250px;
 
   position: relative;
 
@@ -1775,23 +1779,31 @@ footer {
 }
 
 /* =========================================
-   CARD HEADER
+   PIPELINE HEADING
 ========================================= */
 
-.pipeline-card h4 {
+.pipeline-heading {
 
   display: flex;
   align-items: center;
 
   gap: 14px;
 
+  margin-bottom: 18px;
+}
+
+.pipeline-heading h4 {
+
+  margin: 0;
+
   font-size: 18px;
   line-height: 1.35;
 
-  margin-bottom: 16px;
-
   color:
     #0f172a;
+
+  font-weight:
+    700;
 }
 
 /* =========================================
@@ -1839,6 +1851,8 @@ footer {
 
   line-height:
     1.7;
+
+  margin: 0;
 }
 
 /* =========================================
@@ -1925,9 +1939,11 @@ footer {
 
     width: 100%;
     max-width: 340px;
+
+    min-height: auto;
   }
 
-  .pipeline-card h4 {
+  .pipeline-heading h4 {
 
     font-size: 17px;
   }
@@ -1935,6 +1951,19 @@ footer {
   .pipeline-card p {
 
     font-size: 14px;
+  }
+
+  .architecture-stack {
+
+    gap: 10px;
+  }
+
+  .architecture-stack span {
+
+    font-size: 12px;
+
+    padding:
+      9px 14px;
   }
 }
 /* =========================================
