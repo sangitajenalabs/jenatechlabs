@@ -865,16 +865,25 @@ body::after {
   flex: 1;
   min-width: 320px;
 }
+/* =========================================
+   PRODUCT BADGE
+========================================= */
+
 .product-badge {
-  display: inline-block;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background:
-    rgba(99,91,255,0.1);
-  color: var(--primary);
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(8,145,178,0.08);
+  border:1px solid rgba(8,145,178,0.12);
+  color:#0891b2;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.8px;
+  text-transform:uppercase;
+  margin-bottom:18px;
 }
 
 .product-tagline {
