@@ -1,266 +1,325 @@
+# Updated JenaTechLabs HTML Structure
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta
-  name="description"
-  content="JenaTechLabs builds enterprise intelligence platforms, real-time analytics systems, AI-ready data pipelines, CRM software, GIS platforms, and operational dashboards."
->
-<title>
-JenaTechLabs | Enterprise Intelligence & Analytics Platforms
-</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<link rel="stylesheet" href="mycss.css"/>   
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta
+    name="description"
+    content="JenaTechLabs builds enterprise intelligence platforms, analytics systems, AI-ready data pipelines, CRM platforms, and operational dashboards."
+  />
+
+  <title>
+    JenaTechLabs | Enterprise Intelligence & Analytics Platforms
+  </title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="mycss.css" />
 </head>
-
 
 <body>
 
-<!-- NAV -->
-<!-- =========================================
-     NAVBAR
-========================================= -->
+  <!-- =========================================
+       NAVBAR
+  ========================================= -->
 
-<nav class="nav" id="navbar">
+  <nav class="nav" id="navbar">
 
-  <div class="nav-inner">
+    <div class="container nav-inner">
 
-    <!-- LOGO -->
-    <a href="#" class="logo-box">
+      <!-- LOGO -->
+      <a href="#" class="logo-box">
+        <img
+          src="JenaTechLabs_transparent.png"
+          alt="JenaTechLabs"
+          class="logo-img"
+        />
+      </a>
 
-      <img src="JenaTechLabs_transparent.png" alt="JenaTechLabs" class="logo-img"> </a>
+      <!-- DESKTOP NAV -->
+      <div class="nav-links">
+        <a href="#products">Solutions</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#skills">Tech Stack</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-    <!-- DESKTOP LINKS -->
-    <div class="nav-links">
+      <!-- ACTIONS -->
+      <div class="nav-actions">
+        <a href="#" class="nav-login">Sign In</a>
 
-      <a href="#products" onclick="setActive(this)"> Solutions </a>
-      <a href="#architecture" onclick="setActive(this)">  Architecture </a>
-      <a href="#skills" onclick="setActive(this)">  Tech Stack </a>
-      <a href="#contact" onclick="setActive(this)">Contact</a></div>
+        <a href="#contact" class="nav-cta">
+          Book Demo
+        </a>
+      </div>
 
-    <!-- ACTIONS -->
-    <div class="nav-actions">
+      <!-- MOBILE BUTTON -->
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-      <a href="#" class="nav-login">Sign In </a>
-      
-
-      <a href="#contact" class="nav-cta" onclick="setActive(this)" > Book Demo </a>
     </div>
 
-    <!-- HAMBURGER -->
-    <button class="hamburger" id="hamburger" aria-label="Open Menu" >
-   <span></span> <span></span> <span></span> </button>
-   </div>
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#products" onclick="setActive(this)"> Solutions </a>
-    <a href="#architecture" onclick="setActive(this)">Architecture</a>
-    <a href="#skills" onclick="setActive(this)">Tech Stack </a>
-    <a href="#contact" onclick="setActive(this)"> Contact </a>
-    <a href="#">  Sign In </a>
-     
-   
+      <a href="#products">Solutions</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#skills">Tech Stack</a>
+      <a href="#contact">Contact</a>
+      <a href="#">Sign In</a>
 
-    <a href="#contact" class="mobile-cta"  onclick="setActive(this)" >Book Demo</a>
-    
-  </div>
+      <a href="#contact" class="mobile-cta">
+        Book Demo
+      </a>
 
-</nav>
-
-<!-- =========================================
-     HERO SECTION
-========================================= -->
-
-<section class="hero">
-
-  <!-- BACKGROUND -->
-  <div class="hero-bg"></div>
-  <!-- PARTICLE NETWORK -->
-  <canvas id="network"></canvas>
-  <!-- HERO CONTENT -->
-  <div class="hero-content">
-    <!-- TITLE -->
-    <h1 class="hero-title">
-      Build Enterprise <br>
-      Intelligence <span>Platforms</span>
-    </h1>
-
-    <!-- DESCRIPTION -->
-    <p class="hero-description">
-
-      JenaTechLabs engineers scalable enterprise platforms including
-      real-time monitoring systems, CRM solutions, analytics dashboards,
-      AI-ready data pipelines, and operational intelligence software
-      for modern businesses and digital infrastructure.
-    </p>
-    <!-- BUTTONS -->
-    <div class="hero-buttons">
-      <a class="btn-primary" href="#products">Explore Products </a>
-     <a class="btn-secondary" href="#contact">Request Demo</a>
     </div>
 
-  </div>
+  </nav>
 
-</section>
-<!-- FEATURES -->
-<section class="section" id="skills">
-  <div class="container">
 
-    <h2 class="section-title">
-      Engineering Capabilities
-    </h2>
+  <!-- =========================================
+       HERO SECTION
+  ========================================= -->
 
-    <div class="grid">
+  <section class="hero">
 
-  <div class="card">
-    <h3>Platform & Product Engineering</h3>
-    <p>
-      Build scalable enterprise applications, SaaS platforms,
-      CRM systems, and operational dashboards using FastAPI,
-      Flask, React, and modern backend architectures.
-    </p>
-  </div>
+    <div class="hero-bg"></div>
 
-  <div class="card">
-    <h3>Data Engineering & Lakehouse Systems</h3>
-    <p>
-      Design distributed data pipelines using Spark, Delta Lake,
-      Kafka, Airflow, and MinIO with Bronze/Silver/Gold
-      architecture for scalable analytics and AI-ready storage.
-    </p>
-  </div>
+    <canvas id="network"></canvas>
 
-  <div class="card">
-    <h3>Real-Time Processing Systems</h3>
-    <p>
-      Develop event-driven platforms for live tracking,
-      telemetry, alerts, and operational analytics using
-      Kafka, Spark Streaming, and distributed workflows.
-    </p>
-  </div>
+    <div class="container hero-content">
 
-  <div class="card">
-    <h3>AI & Analytics Engineering</h3>
-    <p>
-      Implement NLP, forecasting, sentiment analysis,
-      and predictive intelligence systems that transform
-      operational data into actionable insights.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>GIS & Geospatial Platforms</h3>
-    <p>
-      Build geospatial applications using PostGIS,
-      Leaflet, GeoAlchemy, and spatial analytics for
-      mapping systems and location intelligence.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Cloud & DevOps Infrastructure</h3>
-    <p>
-      Deploy and manage production-ready systems using
-      Docker, CI/CD pipelines, monitoring, and scalable
-      cloud-native infrastructure.
-    </p>
-  </div>
-</div>
-  </div>
-</section>
-<!-- =========================================
-     PRODUCTS SECTION
-========================================= -->
-<section class="section product-section" id="products">
-
-  <div class="container">
-
-    <!-- SECTION HEADER -->
-    <div class="section-header">
-
-      <span class="section-title2">
-        Our Products
+      <span class="hero-tag">
+        Enterprise Intelligence Engineering
       </span>
 
-      <h2 class="section-title">
-        Scalable Platforms Built for Modern Businesses
-      </h2>
+      <h1 class="hero-title">
+        Build Enterprise
+        <br />
+        Intelligence
+        <span>Platforms</span>
+      </h1>
 
-      <p class="section-subtitle">
-        JenaTechLabs develops enterprise-grade platforms for logistics,
-        analytics, automation, operational intelligence, and business management.
+      <p class="hero-description">
+        JenaTechLabs engineers scalable enterprise platforms including
+        real-time monitoring systems, CRM solutions, analytics dashboards,
+        AI-ready data pipelines, and operational intelligence software
+        for modern businesses and digital infrastructure.
       </p>
 
-    </div>
+      <div class="hero-buttons">
 
-    <!-- =========================================
-         PRODUCT : LOGITRACK AI
-    ========================================== -->
-    <div class="product">
+        <a class="btn-primary" href="#products">
+          Explore Products
+        </a>
 
-      <!-- LEFT CONTENT -->
-      <div class="product-content">
-
-        <div class="product-badge">
-          FLAGSHIP PLATFORM
-        </div>
-
-        <h3>LogiTrack-AI</h3>
-
-        <h4 class="product-tagline">
-          Real-Time Operational Intelligence Platform
-        </h4>
-
-        <p>
-          A scalable enterprise platform designed for real-time monitoring,
-          analytics, workflow automation, telemetry ingestion, and operational
-          intelligence across multiple industries.
-        </p>
-
-        <!-- TECH STACK -->
-        <div class="tech-stack">
-
-          <span>FastAPI</span>
-          <span>PySpark</span>
-          <span>Delta Lake</span>
-          <span>Airflow</span>
-          <span>MinIO</span>
-          <span>Metabase</span>
-        </div>
-        <!-- FEATURES -->
-        <ul class="feature-list">
-          <li>High-speed event & telemetry ingestion</li>
-          <li>Distributed ETL & analytics pipelines</li>
-          <li>Real-time monitoring dashboards</li>
-          <li>AI-ready lakehouse architecture</li>
-          <li>Smart alerts & workflow automation</li>
-          <li>Executive BI & reporting systems</li>
-        </ul>
-
-        <!-- BUTTONS -->
-        <div class="product-actions">
-          <a href="#contact" class="btn-primary">Request Demo</a>
-          <a href="#architecture" class="btn-secondary">View Architecture</a>
-       </div>
+        <a class="btn-secondary" href="#contact">
+          Request Demo
+        </a>
 
       </div>
 
-      <!-- RIGHT PREVIEW -->
-      <div class="product-preview">
-        <div class="product-card">
-          <div class="card-glow"></div>
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       ENGINEERING CAPABILITIES
+  ========================================= -->
+
+  <section class="section" id="skills">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-title2">
+          Engineering Expertise
+        </span>
+
+        <h2 class="section-title">
+          Engineering Capabilities
+        </h2>
+
+        <p class="section-subtitle">
+          Modern enterprise engineering for scalable analytics,
+          intelligence systems, AI-ready infrastructure,
+          and operational platforms.
+        </p>
+
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>Platform & Product Engineering</h3>
+          <p>
+            Build scalable SaaS platforms, CRM systems,
+            enterprise applications, and operational dashboards.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Data Engineering & Lakehouse Systems</h3>
+          <p>
+            Distributed pipelines using Spark, Delta Lake,
+            Kafka, Airflow, and MinIO.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Real-Time Processing Systems</h3>
+          <p>
+            Event-driven architectures for telemetry,
+            operational intelligence, and streaming analytics.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>AI & Analytics Engineering</h3>
+          <p>
+            NLP, forecasting, predictive analytics,
+            and operational intelligence systems.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>GIS & Geospatial Platforms</h3>
+          <p>
+            Mapping systems and location intelligence using
+            PostGIS, Leaflet, and spatial analytics.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Cloud & DevOps Infrastructure</h3>
+          <p>
+            Production-ready deployment pipelines,
+            Docker infrastructure, monitoring, and CI/CD.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       PRODUCTS SECTION
+  ========================================= -->
+
+  <section class="section product-section" id="products">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-title2">
+          Our Products
+        </span>
+
+        <h2 class="section-title">
+          Scalable Platforms Built for Modern Businesses
+        </h2>
+
+        <p class="section-subtitle">
+          Enterprise-grade platforms for analytics,
+          operational intelligence, automation,
+          logistics, and business management.
+        </p>
+
+      </div>
+
+
+      <!-- PRODUCT 1 -->
+
+      <div class="product">
+
+        <div class="product-content">
+
+          <div class="product-badge">
+            FLAGSHIP PLATFORM
+          </div>
+
+          <h3>LogiTrack-AI</h3>
+
+          <h4 class="product-tagline">
+            Real-Time Operational Intelligence Platform
+          </h4>
+
+          <p>
+            A scalable enterprise platform designed for real-time monitoring,
+            analytics, telemetry ingestion, workflow automation,
+            and operational intelligence.
+          </p>
+
+          <div class="tech-stack">
+            <span>FastAPI</span>
+            <span>PySpark</span>
+            <span>Delta Lake</span>
+            <span>Airflow</span>
+            <span>MinIO</span>
+            <span>Metabase</span>
+          </div>
+
+          <ul class="feature-list">
+            <li>High-speed telemetry ingestion</li>
+            <li>Distributed ETL pipelines</li>
+            <li>Real-time monitoring dashboards</li>
+            <li>Lakehouse analytics architecture</li>
+            <li>Workflow automation systems</li>
+            <li>Executive BI reporting</li>
+          </ul>
+
+          <div class="product-actions">
+            <a href="#contact" class="btn-primary">
+              Request Demo
+            </a>
+
+            <a href="#architecture" class="btn-secondary">
+              View Architecture
+            </a>
+          </div>
+
+        </div>
+
+
+        <!-- PREVIEW -->
+
+        <div class="product-preview">
+
           <div class="product-box">
+
             <div class="preview-header">
               <span class="live-dot"></span>
               Live Operations Dashboard
             </div>
 
-            <!-- KPI -->
             <div class="stats-grid">
 
               <div class="stat-card">
@@ -285,373 +344,340 @@ JenaTechLabs | Enterprise Intelligence & Analytics Platforms
 
             </div>
 
-            <!-- MAP / PREVIEW -->
             <div class="map-wrapper">
 
               <div id="mapPreview"></div>
+
               <div class="map-ui">
-                System: Operational Analytics <br>
-                Status: 🟢 Active <br>
+                System: Operational Analytics
+                <br />
+                Status: 🟢 Active
+                <br />
                 Pipelines: 24 Running
               </div>
 
-              <div class="map-controls">
-                ⏯️ 🔍 📊
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- =========================================
-         USE CASES SECTION
-    ========================================== -->
-    <div class="usecase-section">
-      <div class="section-header small">
-        <h2 class="section-title">Industries & Use Cases</h2>
-       <p class="section-subtitle">
-          LogiTrack-AI adapts across multiple operational environments and industries.
-        </p>
-
-      </div>
-
-      <div class="usecase-grid">
-
-        <!-- USE CASE 1 -->
-        <div class="usecase-card">
-          <div class="usecase-icon">🚚</div>
-          <h4>Fleet & Logistics</h4>
-          <p>
-            Real-time fleet tracking, shipment monitoring,
-            route optimization, and delivery analytics.
-          </p>
-
-        </div>
-
-        <!-- USE CASE 2 -->
-        <div class="usecase-card">
-
-          <div class="usecase-icon">🏭</div>
-          <h4>Manufacturing Operations</h4>
-          <p>
-            Monitor machinery telemetry, production workflows,
-            operational efficiency, and factory alerts.</p>
-          </div>
-        <!-- USE CASE 3 -->
-        <div class="usecase-card">
-          <div class="usecase-icon">🌐</div>
-          <h4>IoT Monitoring</h4>
-          <p>
-            Process real-time IoT device data streams,
-            sensor analytics, and telemetry events.
-          </p>
-        </div>
-
-        <!-- USE CASE 4 -->
-        <div class="usecase-card">
-          <div class="usecase-icon">🏢</div>
-          <h4>Enterprise Operations</h4>
-          <p>
-            Centralized dashboards for monitoring business
-            processes, workflows, alerts, and KPIs.
-          </p>
-        </div>
-        <!-- USE CASE 5 -->
-        <div class="usecase-card">
-          <div class="usecase-icon">📊</div>
-          <h4>Analytics & Intelligence</h4>
-          <p>
-            Build lakehouse-powered analytics systems with
-            ETL automation and executive reporting dashboards.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- =========================================
-         SECOND PRODUCT : JTL CRM
-    ========================================== -->
-    <div class="product reverse">
-
-      <!-- LEFT PREVIEW -->
-      <div class="product-preview">
-        <div class="product-card">
-          <div class="card-glow"></div>
-          <div class="product-box">
-            <div class="preview-header">
-              <span class="live-dot"></span>
-              CRM Analytics Dashboard
             </div>
 
-            <div class="crm-ui">
-              <div class="crm-top">
-                🏗️ Projects: 12 |
-                💰 Revenue: ₹8.2L |
-                📋 Leads: 245
-              </div>
-
-              <div class="crm-grid">
-                <div class="crm-card">
-                  Leads
-                  <h4>245</h4>
-                </div>
-                <div class="crm-card">
-                  Sales
-                  <h4>32</h4>
-                </div>
-
-                <div class="crm-card">
-                  Pending
-                  <h4>14</h4>
-                </div>
-
-                <div class="crm-card">
-                  Collections
-                  <h4>₹4.6L</h4>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT CONTENT -->
-      <div class="product-content">
-
-        <div class="product-badge secondary">
-          BUSINESS AUTOMATION
-        </div>
-
-        <h3>🏢 JTL CRM</h3>
-
-        <h4 class="product-tagline">
-          Smart CRM & Business Management Platform
-        </h4>
-
-        <p>
-          A modern CRM platform designed for builders,
-          contractors, real estate firms, and service businesses
-          to manage leads, projects, sales, payments, and workflows.
-        </p>
-
-        <!-- TECH -->
-        <div class="tech-stack">
-
-          <span>Flask</span>
-          <span>PostgreSQL</span>
-          <span>React</span>
-          <span>REST API</span>
-          <span>Docker</span>
-        </div>
-
-        <!-- FEATURES -->
-        <ul class="feature-list">
-
-          <li>Lead & customer management</li>
-          <li>Project & site tracking</li>
-          <li>Payment & invoice tracking</li>
-          <li>Reports & analytics dashboard</li>
-          <li>Role-based user management</li>
-          <li>Workflow & document organization</li>
-
-        </ul>
-        <!-- ACTIONS -->
-        <div class="product-actions">
-          <a href="#contact" class="btn-primary">Explore CRM </a>
-          <a href="#contact" class="btn-secondary">Book Demo </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================
-     ARCHITECTURE SECTION
-========================================= -->
-<section class="section architecture-section" id="architecture">
-
-  <div class="container">
-
-    <!-- SECTION HEADER -->
-    <div class="section-header">
-      <span class="section-title2">System Architecture </span>
-      <h2 class="section-title">
-        Enterprise Intelligence Pipeline Architecture</h2>
-      
-      <p class="section-subtitle">
-        LogiTrack-AI combines real-time ingestion, distributed processing,
-        lakehouse analytics, and operational intelligence into a scalable
-        enterprise platform.
-      </p>
-    </div>
-
-    <!-- =========================================
-         PIPELINE FLOW
-    ========================================== -->
-    <div class="pipeline-wrapper">
-
-      <!-- STEP 1 -->
-      <div class="pipeline-card">
-        <div class="pipeline-heading">
-          <div class="pipeline-icon">
-            📡
           </div>
 
-          <h4>Data Ingestion</h4>
+        </div>
+
+      </div>
+
+
+      <!-- USE CASES -->
+
+      <div class="usecase-section">
+
+        <div class="section-header small">
+
+          <h2 class="section-title">
+            Industries & Use Cases
+          </h2>
+
+          <p class="section-subtitle">
+            LogiTrack-AI adapts across multiple industries and operational environments.
+          </p>
 
         </div>
 
-        <p>
-          APIs, telemetry devices, GPS systems,
-          enterprise integrations, and live event streams.
+
+        <div class="usecase-grid">
+
+          <div class="usecase-card">
+            <div class="usecase-icon">🚚</div>
+            <h4>Fleet & Logistics</h4>
+            <p>
+              Fleet tracking, route optimization,
+              shipment monitoring, and delivery analytics.
+            </p>
+          </div>
+
+          <div class="usecase-card">
+            <div class="usecase-icon">🏭</div>
+            <h4>Manufacturing Operations</h4>
+            <p>
+              Machinery telemetry, factory analytics,
+              and operational monitoring systems.
+            </p>
+          </div>
+
+          <div class="usecase-card">
+            <div class="usecase-icon">🌐</div>
+            <h4>IoT Monitoring</h4>
+            <p>
+              Real-time IoT telemetry ingestion,
+              sensor analytics, and live event processing.
+            </p>
+          </div>
+
+          <div class="usecase-card">
+            <div class="usecase-icon">🏢</div>
+            <h4>Enterprise Operations</h4>
+            <p>
+              Centralized operational dashboards,
+              KPI monitoring, and workflow intelligence.
+            </p>
+          </div>
+
+          <div class="usecase-card">
+            <div class="usecase-icon">📊</div>
+            <h4>Analytics & Intelligence</h4>
+            <p>
+              Executive BI systems powered by scalable
+              ETL and lakehouse analytics architecture.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       ARCHITECTURE SECTION
+  ========================================= -->
+
+  <section class="section architecture-section" id="architecture">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-title2">
+          System Architecture
+        </span>
+
+        <h2 class="section-title">
+          Enterprise Intelligence Pipeline Architecture
+        </h2>
+
+        <p class="section-subtitle">
+          Real-time ingestion, distributed processing,
+          lakehouse analytics, and operational intelligence.
         </p>
 
       </div>
 
-      <div class="pipeline-line"></div>
 
-      <!-- STEP 2 -->
-      <div class="pipeline-card">
+      <div class="pipeline-wrapper">
 
-        <div class="pipeline-heading">
+        <div class="pipeline-card">
+          <div class="pipeline-heading">
+            <div class="pipeline-icon">📡</div>
+            <h4>Data Ingestion</h4>
+          </div>
 
-          <div class="pipeline-icon">🪣</div>
-           <h4>Bronze Layer</h4>
-
+          <p>
+            APIs, GPS systems, telemetry devices,
+            integrations, and live event streams.
+          </p>
         </div>
 
-        <p>
-          Raw event storage using MinIO and Delta Lake
-          for replay, auditing, and historical analysis.
-        </p>
 
-      </div>
+        <div class="pipeline-line"></div>
 
-      <div class="pipeline-line"></div>
 
-      <!-- STEP 3 -->
-      <div class="pipeline-card">
+        <div class="pipeline-card">
+          <div class="pipeline-heading">
+            <div class="pipeline-icon">🪣</div>
+            <h4>Bronze Layer</h4>
+          </div>
 
-        <div class="pipeline-heading">
-          <div class="pipeline-icon">⚙️</div>
+          <p>
+            Raw event storage using MinIO and Delta Lake.
+          </p>
+        </div>
+
+
+        <div class="pipeline-line"></div>
+
+
+        <div class="pipeline-card">
+          <div class="pipeline-heading">
+            <div class="pipeline-icon">⚙️</div>
             <h4>Distributed ETL</h4>
           </div>
-        <p>
-          PySpark processing pipelines for cleansing,
-          enrichment, transformations, and data optimization.
-        </p>
 
-      </div>
-
-      <div class="pipeline-line"></div>
-
-      <!-- STEP 4 -->
-      <div class="pipeline-card">
-
-        <div class="pipeline-heading">
-          <div class="pipeline-icon">📊</div>
-             <h4>Gold Analytics</h4>
-              </div>
-        <p>
-          Business intelligence datasets powering dashboards,
-          KPIs, operational reporting, and analytics systems.
-        </p>
-      </div>
-      <div class="pipeline-line"></div>
-      <!-- STEP 5 -->
-      <div class="pipeline-card">
-
-        <div class="pipeline-heading">
-          <div class="pipeline-icon">🧠 </div>
-          <h4>AI Intelligence</h4>
+          <p>
+            Distributed PySpark transformation pipelines.
+          </p>
         </div>
-        <p>
-          Predictive analytics, anomaly detection,
-          operational intelligence, and forecasting models.
-        </p>
-      </div>
-    </div>
 
-    <!-- =========================================
-         TECHNOLOGY STACK
-    ========================================== -->
-    <div class="architecture-stack">
 
-      <span>FastAPI</span>
-      <span>Kafka</span>
-      <span>PySpark</span>
-      <span>Delta Lake</span>
-      <span>Airflow</span>
-      <span>MinIO</span>
-      <span>PostgreSQL</span>
-      <span>Metabase</span>
-      <span>Docker</span>
-    </div>
-  </div>
-</section>
+        <div class="pipeline-line"></div>
 
-  <!-- CTA -->
-<section class="cta" id="contact">
-  <h2>Start building with JenaTech Labs</h2>
-  <p>From idea to scalable SaaS in weeks.</p>
 
-  <div class="cta-actions">
-    <a href="#" class="cta-btn">Get Started</a>
+        <div class="pipeline-card">
+          <div class="pipeline-heading">
+            <div class="pipeline-icon">📊</div>
+            <h4>Gold Analytics</h4>
+          </div>
 
-    <a href="mailto:info@jenatechlabs.com" class="cta-email">
-      info@jenatechlabs.com
-    </a>
-  </div>
-</section>
-<!-- =========================================
-     FOOTER
-========================================= -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <!-- BRAND -->
-      <div class="footer-brand">
-        <div class="footer-brand-name"><span class="brand-jena">JenaTech</span>
-          <span class="brand-labs">Labs</span></div>
-        <p>
-          Enterprise intelligence platforms,
-          real-time analytics systems,
-          AI-ready data pipelines,
-          CRM software, and operational
-          intelligence solutions.
-        </p>
-      </div>
-      <!-- SOLUTIONS -->
-      <div class="footer-links">
-        <h4>Solutions</h4>
-        <a href="#products">  LogiTrack-AI </a>
-        <a href="#products"> JTL CRM</a>
-        <a href="#architecture">Data Lakehouse</a>
-         <a href="#skills">Analytics Engineering</a>
-    </div>
-      <!-- COMPANY -->
-      <div class="footer-links">
-        <h4>Company</h4>
-        <a href="#products"> Products </a>
-        <a href="#architecture">Architecture </a>
-        <a href="#contact"> Contact</a>  
+          <p>
+            Analytics datasets for dashboards,
+            KPIs, reporting, and BI systems.
+          </p>
         </div>
-      <!-- CONTACT -->
-      <div class="footer-links">
-        <h4>Contact</h4>
-        <a href="mailto:info@jenatechlabs.com">info@jenatechlabs.com</a>
-        <a href="#">Bhubaneswar, Odisha</a>
-         </div> 
-      </div> 
-    <!-- BOTTOM -->
-    <div class="footer-bottom">
-      <p>© 2026 JenaTechLabs.  All rights reserved. </p>
+
+
+        <div class="pipeline-line"></div>
+
+
+        <div class="pipeline-card">
+          <div class="pipeline-heading">
+            <div class="pipeline-icon">🧠</div>
+            <h4>AI Intelligence</h4>
+          </div>
+
+          <p>
+            Predictive intelligence,
+            anomaly detection, and forecasting.
+          </p>
+        </div>
+
       </div>
-  </div>
-</footer>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="app.js"></script>
+
+
+      <div class="architecture-stack">
+        <span>FastAPI</span>
+        <span>Kafka</span>
+        <span>PySpark</span>
+        <span>Delta Lake</span>
+        <span>Airflow</span>
+        <span>MinIO</span>
+        <span>PostgreSQL</span>
+        <span>Docker</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CTA SECTION
+  ========================================= -->
+
+  <section class="cta" id="contact">
+
+    <div class="container">
+
+      <h2>
+        Start Building with JenaTechLabs
+      </h2>
+
+      <p>
+        From idea to scalable enterprise SaaS in weeks.
+      </p>
+
+      <div class="cta-actions">
+
+        <a href="#" class="cta-btn">
+          Get Started
+        </a>
+
+        <a
+          href="mailto:info@jenatechlabs.com"
+          class="cta-email"
+        >
+          info@jenatechlabs.com
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <div class="footer-brand-name">
+            <span class="brand-jena">JenaTech</span>
+            <span class="brand-labs">Labs</span>
+          </div>
+
+          <p>
+            Enterprise intelligence platforms,
+            analytics systems, AI-ready pipelines,
+            CRM software, and operational intelligence solutions.
+          </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <h4>Solutions</h4>
+
+          <a href="#products">LogiTrack-AI</a>
+          <a href="#products">JTL CRM</a>
+          <a href="#architecture">Data Lakehouse</a>
+          <a href="#skills">Analytics Engineering</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <h4>Company</h4>
+
+          <a href="#products">Products</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <h4>Contact</h4>
+
+          <a href="mailto:info@jenatechlabs.com">
+            info@jenatechlabs.com
+          </a>
+
+          <a href="#">
+            Bhubaneswar, Odisha
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+        <p>
+          © 2026 JenaTechLabs. All rights reserved.
+        </p>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- SCRIPTS -->
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script src="app.js"></script>
+
 </body>
 </html>
+```
