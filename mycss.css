@@ -1221,6 +1221,24 @@ body::after {
   color:#64748b;
   font-size:0.95rem;
 }
+/* FOOTER BRAND TEXT */
+
+.footer-brand-name{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  font-size:2rem;
+  font-weight:700;
+  margin-bottom:22px;
+  letter-spacing:-1px;
+}
+
+.brand-jena{
+  color:#ffffff;
+}
+.brand-labs{
+  color:#635bff;
+}
 
 /* =========================================
    RESPONSIVE
