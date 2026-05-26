@@ -757,7 +757,7 @@ body::after {
   .btn-primary,
   .btn-secondary {
 
-    width: 90%;
+    width: 80%;
     max-width: 320px;
   }
 }
