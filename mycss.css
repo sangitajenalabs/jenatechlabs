@@ -330,8 +330,9 @@ body::after {
 ========================================= */
 
 .hero {
+
   position: relative;
-  padding: 90px 20px 120px;
+  padding: 140px 20px 120px;
   overflow: hidden;
   text-align: center;
   background: #ffffff;
@@ -342,77 +343,46 @@ body::after {
 ========================================= */
 
 .hero-bg {
+
   position: absolute;
   inset: 0;
 
   background:
 
-    /* top-left glow */
     radial-gradient(
       circle at 0% 0%,
-      rgba(0, 220, 255, 0.12),
-      transparent 32%
-    ),
-
-    /* top-right glow */
-    radial-gradient(
-      circle at 100% 10%,
-      rgba(0, 160, 255, 0.10),
+      rgba(0, 180, 255, 0.08),
       transparent 30%
     ),
 
-    /* bottom soft glow */
     radial-gradient(
-      circle at 50% 100%,
-      rgba(0, 180, 255, 0.08),
-      transparent 40%
+      circle at 100% 10%,
+      rgba(0, 140, 255, 0.06),
+      transparent 28%
     ),
 
-    /* main background */
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(0, 180, 255, 0.05),
+      transparent 38%
+    ),
+
     linear-gradient(
       135deg,
       #ffffff 0%,
-      #f7fbff 35%,
-      #eef6fb 100%
+      #f8fbfd 40%,
+      #eef5f9 100%
     );
 
   z-index: 0;
 }
 
 /* =========================================
-   LARGE CINEMATIC LEFT GLOW
+   LEFT SOFT GLOW
 ========================================= */
 
 .hero-bg::before {
-  content: "";
 
-  position: absolute;
-
-  width: 950px;
-  height: 950px;
-
-  top: -350px;
-  left: -260px;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(0, 220, 255, 0.22) 0%,
-      rgba(0, 180, 255, 0.12) 28%,
-      transparent 68%
-    );
-
-  filter: blur(120px);
-
-  animation:
-    heroFloat 10s ease-in-out infinite alternate;
-}
-
-/* =========================================
-   RIGHT SIDE GLOW
-========================================= */
-
-.hero-bg::after {
   content: "";
 
   position: absolute;
@@ -420,21 +390,53 @@ body::after {
   width: 700px;
   height: 700px;
 
-  right: -220px;
-  bottom: -260px;
+  top: -260px;
+  left: -180px;
 
   background:
     radial-gradient(
       circle,
-      rgba(0, 140, 255, 0.16) 0%,
-      rgba(0, 210, 255, 0.08) 35%,
+      rgba(0, 190, 255, 0.14) 0%,
+      rgba(0, 180, 255, 0.06) 32%,
+      transparent 70%
+    );
+
+  filter: blur(90px);
+  opacity: 0.7;
+
+  animation:
+    heroFloat 12s ease-in-out infinite alternate;
+}
+
+/* =========================================
+   RIGHT SOFT GLOW
+========================================= */
+
+.hero-bg::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -120px;
+  bottom: -180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 150, 255, 0.10) 0%,
+      rgba(0, 180, 255, 0.05) 35%,
       transparent 72%
     );
 
-  filter: blur(120px);
+  filter: blur(90px);
+  opacity: 0.7;
 
   animation:
-    heroFloat2 14s ease-in-out infinite alternate;
+    heroFloat2 16s ease-in-out infinite alternate;
 }
 
 /* =========================================
@@ -451,8 +453,8 @@ body::after {
 
   to {
     transform:
-      translateY(30px)
-      translateX(20px);
+      translateY(20px)
+      translateX(12px);
   }
 }
 
@@ -466,8 +468,8 @@ body::after {
 
   to {
     transform:
-      translateY(-20px)
-      translateX(-30px);
+      translateY(-16px)
+      translateX(-18px);
   }
 }
 
@@ -476,6 +478,7 @@ body::after {
 ========================================= */
 
 .hero-content {
+
   position: relative;
   z-index: 2;
 
@@ -484,43 +487,66 @@ body::after {
 }
 
 /* =========================================
+   HERO TAG
+========================================= */
+
+.hero-tag {
+
+  display: inline-block;
+
+  margin-bottom: 24px;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  color: #0891b2;
+}
+
+/* =========================================
    HERO TITLE
 ========================================= */
 
 .hero-title {
 
-font-size: clamp(48px, 7vw, 72px);
-line-height: 1.02;
-letter-spacing: -2px;
-font-weight: 800;
-margin:10px auto 32px;
-max-width: 980px;
-background:
+  font-size:
+    clamp(48px, 7vw, 72px);
+
+  line-height: 1.02;
+  letter-spacing: -2px;
+  font-weight: 800;
+
+  margin:
+    0 auto 28px;
+
+  max-width: 920px;
+
+  background:
     linear-gradient(
       135deg,
-      #0f172a 10%,
-      #134e6f 45%,
-      #00b7ff 100%
+      #0f172a 15%,
+      #0f766e 100%
     );
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* highlighted word */
 .hero-title span {
 
   background:
     linear-gradient(
       135deg,
-      #00b7ff,
-      #00e0ff
+      #0891b2,
+      #06b6d4
     );
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  text-shadow:
-    0 0 20px rgba(0,183,255,0.18);
+  background-clip: text;
 }
 
 /* =========================================
@@ -528,11 +554,15 @@ background:
 ========================================= */
 
 .hero-description {
-  max-width: 760px;
+
+  max-width: 700px;
+
   margin:
     0 auto;
-  font-size: 20px;
-  line-height: 1.8;
+
+  font-size: 19px;
+  line-height: 1.75;
+
   color: #5b6475;
 }
 
@@ -542,67 +572,16 @@ background:
 
 .hero-buttons {
 
-  margin-top: 44px;
+  margin-top: 42px;
+
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 /* =========================================
-   NETWORK CANVAS
-========================================= */
-
-#network {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  opacity: 0.55;
-}
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media (max-width: 768px) {
-
-  .hero {
-    padding:
-      130px 20px 90px;
-  }
-
-  .hero h1 {
-
-    font-size:
-      clamp(42px, 12vw, 62px);
-    line-height: 1.09;
-    letter-spacing: -2px;
-    padding-top: 10px;
-  }
-
-  .hero-description {
-
-    font-size: 17px;
-    line-height: 1.7;
-  }
-
-  .hero-bg::before {
-
-    width: 700px;
-    height: 700px;
-    top: -250px;
-    left: -260px;
-  }
-
-  .hero-bg::after {
-
-    width: 500px;
-    height: 500px;
-  }
-}
-
-/* =========================================
-   BUTTONS
+   PRIMARY BUTTON
 ========================================= */
 
 .btn-primary {
@@ -612,15 +591,17 @@ background:
   justify-content: center;
 
   padding: 15px 32px;
+
   border-radius: 999px;
 
-  background: linear-gradient(
-    135deg,
-    #0f6c8d 0%,
-    #0891b2 100%
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #0f6c8d 0%,
+      #0891b2 100%
+    );
 
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
 
   font-size: 15px;
@@ -637,9 +618,11 @@ background:
     opacity 0.25s ease;
 }
 
+/* hover */
 .btn-primary:hover {
 
-  transform: translateY(-2px);
+  transform:
+    translateY(-2px);
 
   box-shadow:
     0 14px 28px rgba(8,145,178,0.18);
@@ -651,65 +634,69 @@ background:
 
 .btn-secondary {
 
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 30px;
-  border-radius: 999px;
 
-  border:
-    1px solid rgba(20, 139, 174, 0.18);
+  padding: 15px 32px;
+
+  border-radius: 999px;
 
   background:
     rgba(255,255,255,0.72);
 
   backdrop-filter:
-    blur(14px);
+    blur(8px);
 
   -webkit-backdrop-filter:
-    blur(14px);
+    blur(8px);
 
-  text-decoration: none;
+  border:
+    1px solid rgba(15,108,141,0.22);
 
   color:
     #0f3c5f;
 
-  font-weight: 600;
+  text-decoration: none;
+
   font-size: 15px;
-  letter-spacing: 0.2px;
+  font-weight: 600;
 
   box-shadow:
-    0 6px 20px rgba(15, 60, 95, 0.06),
-    inset 0 1px 0 rgba(255,255,255,0.7);
+    0 6px 18px rgba(15,60,95,0.06);
 
   transition:
-    transform 0.35s ease,
-    background 0.35s ease,
-    border 0.35s ease,
-    box-shadow 0.35s ease;
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.25s ease;
 }
 
 /* hover */
 .btn-secondary:hover {
 
   transform:
-    translateY(-3px);
+    translateY(-2px);
+
   background:
     rgba(255,255,255,0.92);
-  border:
-    1px solid rgba(0, 183, 255, 0.28);
+
   box-shadow:
-    0 14px 35px rgba(0, 160, 255, 0.12);
-  color:
-    #0b2d45;
+    0 10px 24px rgba(15,60,95,0.08);
 }
 
-/* click */
-.btn-secondary:active {
+/* =========================================
+   NETWORK CANVAS
+========================================= */
 
-  transform:
-    translateY(-1px);
+#network {
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  opacity: 0.18;
 }
 
 /* =========================================
@@ -718,13 +705,40 @@ background:
 
 @media (max-width: 768px) {
 
+  .hero {
+
+    padding:
+      120px 20px 90px;
+  }
+
+  .hero-title {
+
+    font-size:
+      clamp(40px, 12vw, 58px);
+
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+  }
+
+  .hero-description {
+
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+
+    flex-direction: column;
+    align-items: center;
+  }
+
   .btn-primary,
   .btn-secondary {
+
     width: 100%;
     max-width: 320px;
   }
 }
-
 
 /* =========================================
    SECTIONS
