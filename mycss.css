@@ -288,11 +288,8 @@ body::after {
 .nav-cta {
 
   position: relative;
-
   padding: 11px 20px;
-
   border-radius: 999px;
-
   background:
     linear-gradient(
       90deg,
@@ -301,13 +298,9 @@ body::after {
     );
 
   color: white;
-
   text-decoration: none;
-
   font-weight: 600;
-
   overflow: hidden;
-
   box-shadow:
     0 10px 25px rgba(99,91,255,0.35);
 
@@ -316,10 +309,8 @@ body::after {
 }
 
 .nav-cta:hover {
-
   transform:
     translateY(-2px);
-
   box-shadow:
     0 20px 40px rgba(99,91,255,0.4);
 }
@@ -328,7 +319,6 @@ body::after {
 /* =========================================
    HERO SECTION
 ========================================= */
-
 .hero {
 
   position: relative;
@@ -346,9 +336,7 @@ body::after {
 
   position: absolute;
   inset: 0;
-
   background:
-
     radial-gradient(
       circle at 0% 0%,
       rgba(0, 180, 255, 0.08),
@@ -392,7 +380,6 @@ body::after {
 
   top: -260px;
   left: -180px;
-
   background:
     radial-gradient(
       circle,
@@ -415,15 +402,11 @@ body::after {
 .hero-bg::after {
 
   content: "";
-
   position: absolute;
-
   width: 520px;
   height: 520px;
-
   right: -120px;
   bottom: -180px;
-
   background:
     radial-gradient(
       circle,
@@ -434,7 +417,6 @@ body::after {
 
   filter: blur(90px);
   opacity: 0.7;
-
   animation:
     heroFloat2 16s ease-in-out infinite alternate;
 }
@@ -481,7 +463,6 @@ body::after {
 
   position: relative;
   z-index: 2;
-
   max-width: 980px;
   margin: auto;
 }
@@ -493,14 +474,11 @@ body::after {
 .hero-tag {
 
   display: inline-block;
-
   margin-bottom: 24px;
-
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-
   color: #0891b2;
 }
 
@@ -512,16 +490,12 @@ body::after {
 
   font-size:
     clamp(48px, 7vw, 72px);
-
   line-height: 1.02;
   letter-spacing: -2px;
   font-weight: 800;
-
   margin:
     0 auto 28px;
-
   max-width: 920px;
-
   background:
     linear-gradient(
       135deg,
@@ -554,15 +528,10 @@ body::after {
 ========================================= */
 
 .hero-description {
-
   max-width: 700px;
-
-  margin:
-    0 auto;
-
+  margin:0 auto;
   font-size: 19px;
   line-height: 1.75;
-
   color: #5b6475;
 }
 
@@ -573,13 +542,11 @@ body::after {
 .hero-buttons {
 
   margin-top: 42px;
-
   display: flex;
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
 }
-
 /* =========================================
    MOBILE HERO TITLE
 ========================================= */
@@ -587,18 +554,11 @@ body::after {
 @media (max-width: 768px) {
 
   .hero-title {
-
-    font-size:
-      clamp(30px, 9vw, 46px);
-
+    font-size:clamp(30px, 9vw, 46px);
     line-height: 1.01;
-
     letter-spacing: -1px;
-
     max-width: 340px;
-
-    margin:
-      0 auto 24px;
+    margin:0 auto 24px;
   }
 
 }
@@ -611,13 +571,9 @@ body::after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   padding: 15px 32px;
-
   border-radius: 999px;
-
-  background:
-    linear-gradient(
+  background:linear-gradient(
       135deg,
       #0f6c8d 0%,
       #0891b2 100%
@@ -628,12 +584,9 @@ body::after {
 
   font-size: 15px;
   font-weight: 600;
-
   border: none;
-
   box-shadow:
     0 8px 20px rgba(8,145,178,0.14);
-
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -642,10 +595,8 @@ body::after {
 
 /* hover */
 .btn-primary:hover {
-
   transform:
     translateY(-2px);
-
   box-shadow:
     0 14px 28px rgba(8,145,178,0.18);
 }
@@ -659,34 +610,24 @@ body::after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   padding: 15px 32px;
-
   border-radius: 999px;
-
   background:
     rgba(255,255,255,0.72);
-
   backdrop-filter:
     blur(8px);
-
   -webkit-backdrop-filter:
     blur(8px);
-
   border:
     1px solid rgba(15,108,141,0.22);
-
   color:
     #0f3c5f;
 
   text-decoration: none;
-
   font-size: 15px;
   font-weight: 600;
-
   box-shadow:
     0 6px 18px rgba(15,60,95,0.06);
-
   transition:
     transform 0.25s ease,
     background 0.25s ease,
@@ -699,10 +640,8 @@ body::after {
 
   transform:
     translateY(-2px);
-
   background:
     rgba(255,255,255,0.92);
-
   box-shadow:
     0 10px 24px rgba(15,60,95,0.08);
 }
@@ -715,9 +654,7 @@ body::after {
 
   position: absolute;
   inset: 0;
-
   z-index: 1;
-
   opacity: 0.18;
 }
 
@@ -728,32 +665,25 @@ body::after {
 @media (max-width: 768px) {
 
   .hero {
-
     padding:
       120px 20px 90px;
   }
-
   .hero-title {
-
     font-size:
       clamp(40px, 12vw, 58px);
-
     line-height: 1.05;
     letter-spacing: -1.5px;
   }
 
   .hero-description {
-
     font-size: 17px;
     line-height: 1.7;
   }
 
   .hero-buttons {
-
     flex-direction: column;
     align-items: center;
   }
-
   .btn-primary,
   .btn-secondary {
 
@@ -765,13 +695,11 @@ body::after {
 /* =========================================
    SECTIONS
 ========================================= */
-
 .section {
   padding:
     110px 20px;
   text-align: center;
 }
-
 .section-title {
 
   font-size: 42px;
@@ -798,7 +726,6 @@ body::after {
 }
 
 .section-title2 {
-
   display: inline-block;
   margin-bottom: 12px;
   font-size: 15px;
@@ -814,7 +741,6 @@ body::after {
 /* =========================================
    GRID
 ========================================= */
-
 .grid,
 .usecase-grid,
 .stats-grid,
@@ -828,11 +754,9 @@ body::after {
     repeat(3,1fr);
   margin-top: 50px;
 }
-
 /* =========================================
    CARDS
 ========================================= */
-
 .card {
   position: relative;
   background:
@@ -908,19 +832,16 @@ body::after {
   min-width: 300px;
   text-align: left;
 }
-
 .product-preview {
   flex: 1;
   min-width: 320px;
 }
-
 .product-badge {
   display: inline-block;
   padding: 8px 14px;
   border-radius: 999px;
   background:
     rgba(99,91,255,0.1);
-
   color: var(--primary);
   font-size: 12px;
   font-weight: 600;
@@ -1119,8 +1040,7 @@ body::after {
 
 .cta {
   position: relative;
-  padding:
-    130px 20px;
+  padding:130px 20px;
   text-align: center;
   overflow: hidden;
   background:
@@ -1129,7 +1049,6 @@ body::after {
       #0a2540,
       #1e293b
     );
-
   color: white;
 }
 
@@ -1165,7 +1084,6 @@ body::after {
 
   bottom: -150px;
   right: -150px;
-
   filter: blur(100px);
 }
 
@@ -1197,8 +1115,7 @@ body::after {
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
-  transition:
-    var(--transition);
+  transition:var(--transition);
 }
 
 .cta-btn {
@@ -1209,13 +1126,10 @@ body::after {
 
 .cta-email {
 
-  background:
-    rgba(255,255,255,0.12);
+  background:rgba(255,255,255,0.12);
   color: white;
-  border:
-    1px solid rgba(255,255,255,0.18);
-  backdrop-filter:
-    blur(10px);
+  border:1px solid rgba(255,255,255,0.18);
+  backdrop-filter:blur(10px);
 }
 
 /* =========================================
@@ -1248,26 +1162,18 @@ footer {
   height: 48px;
 
   border-radius: 14px;
-
   background:
     rgba(255,255,255,0.72);
-
   backdrop-filter:
     blur(14px);
-
   -webkit-backdrop-filter:
     blur(14px);
-
   border:
     1px solid rgba(255,255,255,0.22);
-
   box-shadow:
     0 8px 24px rgba(15,23,42,0.06);
-
   cursor: pointer;
-
   position: relative;
-
   transition:
     all 0.3s ease;
 }
@@ -1277,7 +1183,6 @@ footer {
 
   transform:
     translateY(-2px);
-
   box-shadow:
     0 12px 30px rgba(0,183,255,0.12);
 }
@@ -1286,14 +1191,10 @@ footer {
 .hamburger span {
 
   position: absolute;
-
   left: 50%;
-
   width: 22px;
   height: 2.5px;
-
   border-radius: 999px;
-
   background:
     linear-gradient(
       90deg,
@@ -1301,11 +1202,8 @@ footer {
       #00b7ff
     );
 
-  transform:
-    translateX(-50%);
-
-  transition:
-    all 0.35s ease;
+  transform:translateX(-50%);
+  transition:all 0.35s ease;
 }
 
 /* top line */
@@ -1355,9 +1253,7 @@ footer {
 
   backdrop-filter:
     blur(22px);
-
   display: flex;
-
   flex-direction: column;
   padding: 100px 30px;
   gap: 22px;
@@ -1367,12 +1263,10 @@ footer {
 }
 
 .mobile-menu.active {
-
   right: 0;
 }
 
 .mobile-menu a {
-
   text-decoration: none;
   color: var(--dark);
   font-size: 18px;
@@ -1380,7 +1274,6 @@ footer {
 }
 
 .mobile-cta {
-
   margin-top: 18px;
   padding: 12px;
   text-align: center;
@@ -1442,7 +1335,6 @@ footer {
 
   .grid,
   .usecase-grid {
-
     grid-template-columns: 1fr;
   }
 
@@ -1523,13 +1415,10 @@ footer {
 .tech-stack span {
   padding: 8px 14px;
   border-radius: 999px;
-
   background: rgba(99,91,255,0.08);
   color: #4f46e5;
-
   font-size: 13px;
   font-weight: 600;
-
   border: 1px solid rgba(99,91,255,0.12);
 }
 
@@ -1550,11 +1439,9 @@ footer {
   display: flex;
   align-items: center;
   gap: 10px;
-
   font-size: 14px;
   font-weight: 600;
   color: #0a2540;
-
   margin-bottom: 18px;
 }
 
@@ -1564,9 +1451,7 @@ footer {
   height: 10px;
   border-radius: 50%;
   background: #22c55e;
-
   box-shadow: 0 0 12px rgba(34,197,94,0.7);
-
   animation: pulse 1.8s infinite;
 }
 
@@ -1600,7 +1485,6 @@ footer {
 .stat-card {
   background: rgba(248,250,252,0.9);
   border: 1px solid rgba(0,0,0,0.04);
-
   border-radius: 14px;
   padding: 16px;
 }
@@ -1634,20 +1518,15 @@ footer {
 
 .usecase-card {
   background: rgba(255,255,255,0.85);
-
   backdrop-filter: blur(10px);
-
   border-radius: 18px;
   padding: 24px;
-
   border: 1px solid rgba(0,0,0,0.05);
-
   transition: 0.3s;
 }
 
 .usecase-card:hover {
   transform: translateY(-6px);
-
   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
@@ -1753,20 +1632,15 @@ footer {
 /* background glow */
 .architecture-section::before {
   content: "";
-
   position: absolute;
-
   width: 600px;
   height: 600px;
-
   background:
     radial-gradient(circle,
     rgba(99,91,255,0.12),
     transparent 70%);
-
   top: -200px;
   left: -200px;
-
   filter: blur(80px);
 }
 
@@ -1776,20 +1650,16 @@ footer {
 
 .pipeline-wrapper {
   margin-top: 60px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 18px;
-
   flex-wrap: wrap;
 }
 
 /* CARD */
 .pipeline-card {
   position: relative;
-
   width: 200px;
   padding: 28px 22px;
   border-radius: 20px;
@@ -1800,10 +1670,8 @@ footer {
     0 15px 40px rgba(0,0,0,0.05);
   transition: 0.35s;
 }
-
 .pipeline-card:hover {
   transform: translateY(-8px);
-
   box-shadow:
     0 25px 60px rgba(0,0,0,0.10);
 }
@@ -1817,16 +1685,13 @@ footer {
 /* TITLE */
 .pipeline-card h4 {
   margin-bottom: 10px;
-
   color: #0a2540;
-
   font-size: 18px;
 }
 
 /* TEXT */
 .pipeline-card p {
   color: #64748b;
-
   font-size: 14px;
   line-height: 1.6;
 }
@@ -1882,7 +1747,6 @@ footer {
   .pipeline-wrapper {
     gap: 30px;
   }
-
   .pipeline-line {
     display: none;
   }
@@ -1890,7 +1754,6 @@ footer {
 }
 
 @media(max-width: 700px){
-
   .pipeline-card {
     width: 100%;
     max-width: 320px;
