@@ -1227,10 +1227,11 @@ body::after {
   display:flex;
   align-items:center;
   gap:4px;
-  font-size:2rem;
-  font-weight:700;
   margin-bottom:22px;
-  letter-spacing:-1px;
+  font-family:"Plus Jakarta Sans",sans-serif;
+  font-size:1.9rem;
+  font-weight:700;
+  letter-spacing:-1.2px; 
 }
 
 .brand-jena{
