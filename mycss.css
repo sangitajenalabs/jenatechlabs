@@ -491,13 +491,9 @@ body::after{
 .hero{
 
   position:relative;
-
   overflow:hidden;
-
   text-align:center;
-
-  padding:110px 20px 90px;
-
+  padding:30px 20px 90px;
   background:#fff;
 }
 
