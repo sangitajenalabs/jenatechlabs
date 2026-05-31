@@ -73,106 +73,142 @@ JenaTechLabs | Enterprise Intelligence & Analytics Platforms
 </nav>
 
 <!-- =========================================
-     HERO SECTION
+     ALTERNATIVE HERO (LIVE TECH PIPELINE THEME)
 ========================================= -->
+<section class="hero-split" aria-label="Introduction">
+  
+  <div class="hero-split-bg"></div>
+  <canvas id="network" aria-hidden="true"></canvas>
 
-<section class="hero">
+  <div class="hero-split-container">
+    
+    <!-- LEFT COLUMN: Value Proposition Messaging -->
+    <div class="hero-split-text">
+      <div class="hero-split-badge">
+        <span class="badge-split-dot"></span> Full-Stack Architecture Operational
+      </div>
+      
+      <h1 class="hero-split-title">
+        Build Enterprise <br>
+        <span class="text-gradient-split">Intelligence Platforms</span>
+      </h1>
+      
+      <p class="hero-split-desc">
+        JenaTechLabs engineers high-throughput distributed architectures, robust full-stack systems, 
+        and AI-ready storage foundations built on trusted enterprise open-source stacks.
+      </p>
+      
+      <div class="hero-split-actions">
+        <a href="#contact" class="btn-split-primary">Request Demo</a>
+        <a href="#skills" class="btn-split-secondary">Explore Products</a>
+      </div>
+    </div>
 
-  <!-- BACKGROUND -->
-  <div class="hero-bg"></div>
-  <!-- PARTICLE NETWORK -->
-  <canvas id="network"></canvas>
-  <!-- HERO CONTENT -->
-  <div class="hero-content">
-    <!-- TITLE -->
-    <h1 class="hero-title">
-      Build Enterprise <br>
-      Intelligence <span>Platforms</span>
-    </h1>
+    <!-- RIGHT COLUMN: Interactive Tech Stack Pipeline Flow -->
+    <div class="hero-split-visual">
+      <div class="pipeline-board">
+        
+        <!-- Section Header -->
+        <div class="pipeline-header">
+          <div class="header-status">
+            <span class="pulse-indicator"></span> System Telemetry Flow
+          </div>
+          <div class="docker-badge">Docker Containerized</div>
+        </div>
 
-    <!-- DESCRIPTION -->
-    <p class="hero-description">
+        <!-- Layer 0: Full-Stack Ingestion Layer -->
+        <div class="pipeline-tier">
+          <div class="tier-label">Applications & Events</div>
+          <div class="tech-nodes-row">
+            <div class="tech-node" data-tech="react">
+              <span class="node-label">React UI</span>
+              <div class="stream-pulse"></div>
+            </div>
+            <div class="tech-connector"></div>
+            <div class="tech-node" data-tech="php">
+              <span class="node-label">PHP Core</span>
+              <div class="stream-pulse delay-1"></div>
+            </div>
+          </div>
+        </div>
 
-      JenaTechLabs engineers scalable enterprise platforms including
-      real-time monitoring systems, CRM solutions, analytics dashboards,
-      AI-ready data pipelines, and operational intelligence software
-      for modern businesses and digital infrastructure.
-    </p>
-    <!-- BUTTONS -->
-    <div class="hero-buttons">
-      <a class="btn-primary" href="#products">Explore Products </a>
-     <a class="btn-secondary" href="#contact">Request Demo</a>
+        <!-- Connector Path between Tiers -->
+        <div class="tier-bridge"></div>
+
+        <!-- Layer 1: Ingestion Edge -->
+        <div class="pipeline-tier">
+          <div class="tier-label">Data Ingestion</div>
+          <div class="tech-nodes-row">
+            <div class="tech-node" data-tech="fastapi">
+              <span class="node-label">FastAPI</span>
+              <div class="stream-pulse delay-1"></div>
+            </div>
+            <div class="tech-connector"></div>
+            <div class="tech-node" data-tech="kafka">
+              <span class="node-label">Kafka</span>
+              <div class="stream-pulse delay-2"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Connector Path between Tiers -->
+        <div class="tier-bridge"></div>
+
+        <!-- Layer 2: Orchestration & Compute -->
+        <div class="pipeline-tier">
+          <div class="tier-label">Compute & Scheduling</div>
+          <div class="tech-nodes-row">
+            <div class="tech-node" data-tech="airflow">
+              <span class="node-label">Airflow</span>
+              <div class="stream-pulse delay-2"></div>
+            </div>
+            <div class="tech-connector"></div>
+            <div class="tech-node" data-tech="pyspark">
+              <span class="node-label">PySpark</span>
+              <div class="stream-pulse delay-3"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Connector Path between Tiers -->
+        <div class="tier-bridge"></div>
+
+        <!-- Layer 3: Unified Lakehouse Storage -->
+        <div class="pipeline-tier">
+          <div class="tier-label">Storage & Lakehouse Layers</div>
+          <div class="tech-nodes-row">
+            <div class="tech-node" data-tech="minio">
+              <span class="node-label">MinIO</span>
+            </div>
+            <div class="tech-node" data-tech="deltalake">
+              <span class="node-label">Delta Lake</span>
+            </div>
+            <div class="tech-node" data-tech="postgres">
+              <span class="node-label">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Connector Path between Tiers -->
+        <div class="tier-bridge"></div>
+
+        <!-- Layer 4: Intelligence Serving -->
+        <div class="pipeline-tier">
+          <div class="tier-label">Analytics Serving</div>
+          <div class="tech-nodes-row">
+            <div class="tech-node target-serving" data-tech="metabase">
+              <span class="node-label">Metabase BI</span>
+              <div class="serving-glow"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
   </div>
-
 </section>
-<!-- FEATURES -->
-<section class="section" id="skills">
-  <div class="container">
 
-    <h2 class="section-title">
-      Engineering Capabilities
-    </h2>
-
-    <div class="grid">
-
-  <div class="card">
-    <h3>Platform & Product Engineering</h3>
-    <p>
-      Build scalable enterprise applications, SaaS platforms,
-      CRM systems, and operational dashboards using FastAPI,
-      Flask, React, and modern backend architectures.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Data Engineering & Lakehouse Systems</h3>
-    <p>
-      Design distributed data pipelines using Spark, Delta Lake,
-      Kafka, Airflow, and MinIO with Bronze/Silver/Gold
-      architecture for scalable analytics and AI-ready storage.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Real-Time Processing Systems</h3>
-    <p>
-      Develop event-driven platforms for live tracking,
-      telemetry, alerts, and operational analytics using
-      Kafka, Spark Streaming, and distributed workflows.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>AI & Analytics Engineering</h3>
-    <p>
-      Implement NLP, forecasting, sentiment analysis,
-      and predictive intelligence systems that transform
-      operational data into actionable insights.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>GIS & Geospatial Platforms</h3>
-    <p>
-      Build geospatial applications using PostGIS,
-      Leaflet, GeoAlchemy, and spatial analytics for
-      mapping systems and location intelligence.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Cloud & DevOps Infrastructure</h3>
-    <p>
-      Deploy and manage production-ready systems using
-      Docker, CI/CD pipelines, monitoring, and scalable
-      cloud-native infrastructure.
-    </p>
-  </div>
-</div>
-  </div>
-</section>
 <!-- =========================================
      PRODUCTS SECTION
 ========================================= -->
